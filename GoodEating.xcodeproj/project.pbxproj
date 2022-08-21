@@ -19,7 +19,6 @@
 		FD9D7B0528B29DB7006D7862 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD9D7B0728B29DB9006D7862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD9D7B0A28B29DB9006D7862 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FD9D7B1328B2A17F006D7862 /* README.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +35,6 @@
 		FD9D7AF728B29DB7006D7862 = {
 			isa = PBXGroup;
 			children = (
-				FD9D7B1328B2A17F006D7862 /* README.MD */,
 				FD9D7B0228B29DB7006D7862 /* GoodEating */,
 				FD9D7B0128B29DB7006D7862 /* Products */,
 			);
