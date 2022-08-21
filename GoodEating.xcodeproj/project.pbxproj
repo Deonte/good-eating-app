@@ -55,6 +55,7 @@
 			children = (
 				FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */,
 				FD9D7B0528B29DB7006D7862 /* ContentView.swift */,
+				FD9D7B1528B2B4A7006D7862 /* Screens */,
 				FD9D7B0728B29DB9006D7862 /* Assets.xcassets */,
 				FD9D7B0928B29DB9006D7862 /* Preview Content */,
 			);
@@ -67,6 +68,13 @@
 				FD9D7B0A28B29DB9006D7862 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD9D7B1528B2B4A7006D7862 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
