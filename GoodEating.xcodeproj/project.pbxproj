@@ -14,11 +14,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FD9D7B0028B29DB7006D7862 /* GoodEating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodEating.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD9D7B0028B29DB7006D7862 /* Good Eating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Eating.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEatingApp.swift; sourceTree = "<group>"; };
 		FD9D7B0528B29DB7006D7862 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD9D7B0728B29DB9006D7862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD9D7B0A28B29DB9006D7862 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD9D7B1328B2A17F006D7862 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +36,7 @@
 		FD9D7AF728B29DB7006D7862 = {
 			isa = PBXGroup;
 			children = (
+				FD9D7B1328B2A17F006D7862 /* README.md */,
 				FD9D7B0228B29DB7006D7862 /* GoodEating */,
 				FD9D7B0128B29DB7006D7862 /* Products */,
 			);
@@ -43,7 +45,7 @@
 		FD9D7B0128B29DB7006D7862 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD9D7B0028B29DB7006D7862 /* GoodEating.app */,
+				FD9D7B0028B29DB7006D7862 /* Good Eating.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,7 +86,7 @@
 			);
 			name = GoodEating;
 			productName = GoodEating;
-			productReference = FD9D7B0028B29DB7006D7862 /* GoodEating.app */;
+			productReference = FD9D7B0028B29DB7006D7862 /* Good Eating.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -281,7 +283,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.compilery.GoodEating;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Good Eating";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,7 +312,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.compilery.GoodEating;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Good Eating";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
