@@ -27,18 +27,32 @@ struct HeaderView: View {
             Button {
                 isOnboarding = true
             } label: {
-                Image(systemName: Constants.SFSymbol.sheet)
-                    .font(.system(size: 40))
-                    .foregroundColor(.accentColor)
+                SymbolView(image: Constants.SFSymbol.sheet)
             }
         }
         .padding()
     }
 }
+
+struct SymbolView: View {
+    var image: String
+    var color: Color = .accentColor
+    
+    var body: some View {
+        Image(systemName: image)
+            .font(.system(size: 40))
+            .foregroundColor(color)
+
+    }
+}
+
 struct TextViews_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             HeaderView(username: "Deonté", isOnboarding: .constant(false))
+            
+            
         }
     }
 }
+

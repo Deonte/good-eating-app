@@ -16,7 +16,7 @@ struct HomeView: View {
             Spacer()
         }
         .sheet(isPresented: $isOnboarding) {
-            OnboardingView()
+            OnboardingView(isOnboarding: $isOnboarding)
         }
     }
 }
