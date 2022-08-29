@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD0DEB1628BCF1F400C34892 /* week-two-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "week-two-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FD9D7B0028B29DB7006D7862 /* Good Eating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Eating.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEatingApp.swift; sourceTree = "<group>"; };
 		FD9D7B0728B29DB9006D7862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,10 +40,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD0DEB1528BCF19A00C34892 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				FD0DEB1628BCF1F400C34892 /* week-two-hw.playground */,
+			);
+			path = Playgrounds;
+			sourceTree = "<group>";
+		};
 		FD9D7AF728B29DB7006D7862 = {
 			isa = PBXGroup;
 			children = (
 				FD9D7B1428B2AFAD006D7862 /* README.md */,
+				FD0DEB1528BCF19A00C34892 /* Playgrounds */,
 				FD9D7B0228B29DB7006D7862 /* GoodEating */,
 				FD9D7B0128B29DB7006D7862 /* Products */,
 			);
