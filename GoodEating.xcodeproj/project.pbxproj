@@ -27,6 +27,7 @@
 		FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		FD9D7B1F28B2C00B006D7862 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		FD9D7B2128B2C30E006D7862 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FDADB80428C5216A0025930E /* week-three-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "week-three-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0DEB1628BCF1F400C34892 /* week-two-hw.playground */,
+				FDADB80428C5216A0025930E /* week-three-hw.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
