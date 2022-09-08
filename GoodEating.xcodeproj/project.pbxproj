@@ -14,6 +14,8 @@
 		FD9D7B1B28B2BE10006D7862 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */; };
 		FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B1F28B2C00B006D7862 /* TextViews.swift */; };
 		FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B2128B2C30E006D7862 /* Constants.swift */; };
+		FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7228C893C600EFC570 /* Menu.swift */; };
+		FDDA8C7528C893E500EFC570 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7428C893E500EFC570 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		FD9D7B1F28B2C00B006D7862 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		FD9D7B2128B2C30E006D7862 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		FDADB80428C5216A0025930E /* week-three-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "week-three-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FDADB80428C5216A0025930E /* myover-complicated-week-three-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "myover-complicated-week-three-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FDDA8C7228C893C600EFC570 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		FDDA8C7428C893E500EFC570 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0DEB1628BCF1F400C34892 /* week-two-hw.playground */,
-				FDADB80428C5216A0025930E /* week-three-hw.playground */,
+				FDADB80428C5216A0025930E /* myover-complicated-week-three-hw.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
@@ -73,6 +77,7 @@
 			children = (
 				FD9D7B1928B2B6D7006D7862 /* App */,
 				FD9D7B1828B2B6C2006D7862 /* Utils */,
+				FDDA8C7128C893B200EFC570 /* Model */,
 				FD9D7B1C28B2BFD1006D7862 /* Custom Views */,
 				FD9D7B1528B2B4A7006D7862 /* Screens */,
 				FD9D7B0928B29DB9006D7862 /* Preview Content */,
@@ -100,6 +105,7 @@
 		FD9D7B1828B2B6C2006D7862 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FDDA8C7628C8941300EFC570 /* Extensions */,
 				FD9D7B2128B2C30E006D7862 /* Constants.swift */,
 			);
 			path = Utils;
@@ -120,6 +126,22 @@
 				FD9D7B1F28B2C00B006D7862 /* TextViews.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		FDDA8C7128C893B200EFC570 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDDA8C7228C893C600EFC570 /* Menu.swift */,
+				FDDA8C7428C893E500EFC570 /* Order.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FDDA8C7628C8941300EFC570 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,11 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */,
 				FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */,
 				FD9D7B1B28B2BE10006D7862 /* OnboardingView.swift in Sources */,
 				FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */,
 				FD9D7B1728B2B5C4006D7862 /* HomeView.swift in Sources */,
 				FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */,
+				FDDA8C7528C893E500EFC570 /* Order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
