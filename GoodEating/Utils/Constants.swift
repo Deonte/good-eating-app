@@ -13,5 +13,6 @@ enum Constants {
         public static let menu = "menucard"
         public static let star = "star.circle.fill"
         public static let creditCard = "creditcard"
+        public static let user = "person.circle.fill"
     }
 }
