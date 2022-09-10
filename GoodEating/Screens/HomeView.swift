@@ -18,6 +18,9 @@ struct HomeView: View {
         .sheet(isPresented: $isOnboarding) {
             OnboardingView(isOnboarding: $isOnboarding)
         }
+        .onAppear {
+            print(MockMenu.data)
+        }
     }
 }
 
