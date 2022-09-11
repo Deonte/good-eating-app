@@ -15,6 +15,8 @@
 		FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B1F28B2C00B006D7862 /* TextViews.swift */; };
 		FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B2128B2C30E006D7862 /* Constants.swift */; };
 		FDA813E028CD1CF600EF83B9 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA813DF28CD1CF600EF83B9 /* CategoryView.swift */; };
+		FDA813E228CD813100EF83B9 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA813E128CD813100EF83B9 /* MenuItemCell.swift */; };
+		FDA813E428CD924800EF83B9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA813E328CD924800EF83B9 /* DetailView.swift */; };
 		FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7228C893C600EFC570 /* Menu.swift */; };
 		FDDA8C7528C893E500EFC570 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7428C893E500EFC570 /* Order.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +33,8 @@
 		FD9D7B1F28B2C00B006D7862 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		FD9D7B2128B2C30E006D7862 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDA813DF28CD1CF600EF83B9 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		FDA813E128CD813100EF83B9 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		FDA813E328CD924800EF83B9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FDADB80428C5216A0025930E /* myover-complicated-week-three-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "myover-complicated-week-three-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FDDA8C7228C893C600EFC570 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FDDA8C7428C893E500EFC570 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			children = (
 				FD9D7B1628B2B5C4006D7862 /* HomeView.swift */,
 				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
+				FDA813E328CD924800EF83B9 /* DetailView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			children = (
 				FD9D7B1F28B2C00B006D7862 /* TextViews.swift */,
 				FDA813DF28CD1CF600EF83B9 /* CategoryView.swift */,
+				FDA813E128CD813100EF83B9 /* MenuItemCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -220,9 +226,11 @@
 				FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */,
 				FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */,
 				FD9D7B1B28B2BE10006D7862 /* OnboardingView.swift in Sources */,
+				FDA813E428CD924800EF83B9 /* DetailView.swift in Sources */,
 				FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */,
 				FD9D7B1728B2B5C4006D7862 /* HomeView.swift in Sources */,
 				FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */,
+				FDA813E228CD813100EF83B9 /* MenuItemCell.swift in Sources */,
 				FDA813E028CD1CF600EF83B9 /* CategoryView.swift in Sources */,
 				FDDA8C7528C893E500EFC570 /* Order.swift in Sources */,
 			);

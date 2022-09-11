@@ -10,14 +10,27 @@ import SwiftUI
 struct HomeView: View {
     @State private var isOnboarding = false
     @State private var category: CourseCategory = .appetizer
-    
+    @State private var menuItems: [MenuItem] = MockMenu.data
     var body: some View {
-        VStack {
-            HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
-                .padding(.bottom)
-            CategorySelectionView(category: $category)
-            
-            Spacer()
+        NavigationView {
+            VStack {
+                HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
+                    .padding(.bottom)
+                CategorySelectionView(category: $category)
+                    .padding(.bottom, 20)
+                Spacer()
+                
+                VStack {
+                    List {
+                        ForEach(menuItems) { item in
+                            NavigationLink(destination: DetailView(menuItem: item)) {
+                                MenuItemCell(menuItem: item)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationBarHidden(true)
         }
         .sheet(isPresented: $isOnboarding) {
             OnboardingView(isOnboarding: $isOnboarding)
@@ -25,6 +38,7 @@ struct HomeView: View {
         .onAppear {
             print(MockMenu.data)
         }
+        .background(Color(uiColor: .tertiarySystemBackground))
     }
 }
 
