@@ -40,6 +40,7 @@ struct CategoryView: View {
                 .font(.footnote)
                 .foregroundColor(Color(uiColor: .label))
         }
+        .frame(maxHeight: 80)
     }
 }
 

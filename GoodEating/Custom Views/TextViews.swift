@@ -35,7 +35,7 @@ struct HeaderView: View {
 
 struct SymbolView: View {
     var image: String
-    var color: Color = .accentColor.opacity(0.7)
+    var color: Color = .accentColor
     
     var body: some View {
         Image(systemName: image)

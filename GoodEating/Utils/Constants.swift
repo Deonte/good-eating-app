@@ -5,7 +5,7 @@
 //  Created by Deonte Kilgore on 8/21/22.
 //
 
-import Foundation
+import SwiftUI
 
 enum Constants {
     enum SFSymbol {
@@ -15,4 +15,12 @@ enum Constants {
         public static let creditCard = "creditcard"
         public static let user = "person.circle.fill"
     }
+    
+    enum ScreenSize {
+        static let width = UIScreen.main.bounds.size.width
+        static let height = UIScreen.main.bounds.size.height
+        static let maxLength = max(ScreenSize.width, ScreenSize.height)
+        static let minLength = min(ScreenSize.width, ScreenSize.height)
+    }
+
 }
