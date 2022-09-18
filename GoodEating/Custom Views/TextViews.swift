@@ -14,12 +14,11 @@ struct HeaderView: View {
     var body: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 5) {
-                Text("Welcome,")
+                Text("Hello, \(username) 👋")
                     .font(.title)
-                    .fontWeight(.bold)
-                Text(username)
-                    .font(.title)
-                    .foregroundColor(.secondary)
+                    .fontWeight(.medium)
+                Text("it's dinner time!")
+                    .font(.subheadline)
             }
             
             Spacer()
@@ -27,7 +26,7 @@ struct HeaderView: View {
             Button {
                 isOnboarding = true
             } label: {
-                SymbolView(image: Constants.SFSymbol.sheet)
+                SymbolView(image: Constants.SFSymbol.user)
             }
         }
         .padding()
@@ -50,8 +49,6 @@ struct TextViews_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             HeaderView(username: "Deonté", isOnboarding: .constant(false))
-            
-            
         }
     }
 }
