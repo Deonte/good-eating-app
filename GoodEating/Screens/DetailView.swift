@@ -15,11 +15,17 @@ struct DetailView: View {
 
     var body: some View {
         VStack {
-            Image(menuItem.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: Constants.ScreenSize.height > 667 ? 400 : 300)
-                .clipped()
+            ZStack(alignment: .bottom) {
+                Image(menuItem.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: Constants.ScreenSize.height > 667 ? 400 : 300)
+                    .clipped()
+                
+                if menuItem.rating > 4.5 {
+                    PopularView()
+                }
+            }
             
             Spacer()
             
@@ -76,7 +82,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(menuItem: .constant(MockMenu.data[3]))
+        DetailView(menuItem: .constant(MockMenu.data[0]))
     }
 }
 
@@ -110,3 +116,29 @@ private struct HeaderImageView: View {
     }
 }
 
+
+private struct PopularView: View {
+    var body: some View {
+        VStack {
+            ZStack {
+                HStack {
+                    Image(systemName: "star.circle")
+                        .resizable()
+                        .foregroundColor(.yellow)
+                        .frame(width: 20, height: 20)
+                    
+                    Text("Popular")
+                        .font(.title)
+                        .foregroundColor(.yellow)
+                }
+            }
+            .padding(8)
+            .background(
+                Rectangle()
+                    .blur(radius: 20)
+                    .cornerRadius(20)
+            )
+            .padding()
+        }
+    }
+}
