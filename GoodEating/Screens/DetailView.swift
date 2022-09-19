@@ -9,71 +9,37 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var menuItem: MenuItem
-    @EnvironmentObject var order: Order
     @EnvironmentObject var favorites: Favorites
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
+    
     var body: some View {
-        VStack {
-            ZStack(alignment: .bottom) {
-                Image(menuItem.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: Constants.ScreenSize.height > 667 ? 400 : 300)
-                    .clipped()
+        ScrollView(.vertical) {
+            VStack {
+                DetailImageView(menuItem: menuItem)
+                    .padding(.bottom)
                 
-                if menuItem.rating > 4.5 {
-                    PopularView()
-                }
+                DescriptionView(menuItem: menuItem)
             }
-            
-            Spacer()
-            
-            VStack(alignment: .leading, spacing: 3) {
-                HStack {
-                    Text(menuItem.title)
-                        .font(.title2)
-                        .bold()
-                    Spacer()
-                    Text("$\(String(format: "%.2f", menuItem.price))")
-                        .font(.title3)
-                        .bold()
-                }
-
-                Text(menuItem.category.description())
-                    .font(.subheadline)
-
-                Text(menuItem.description)
-                    .padding(.vertical)
-
-                Text("\(menuItem.calories) Calories")
-                    .font(.subheadline)
-
-                Spacer()
-                
-                Button {
-                    order.add(menuItem)
-                    self.presentationMode.wrappedValue.dismiss() 
-                } label: {
-                    GEButton(title: "Add to Order")
-                }
-            }
-            .padding(.horizontal)
-        }
-        .padding(.bottom)
-        .navigationViewStyle(.stack)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(menuItem.category.description())
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    menuItem.isFavorite.toggle()
-                    favorites.add(menuItem)
-                } label: {
-                    Image(systemName: "heart.circle.fill")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundColor(menuItem.isFavorite ? .red : .secondary)
+            .padding(.bottom)
+            .navigationViewStyle(.stack)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(menuItem.category.description())
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        if menuItem.isFavorite == false {
+                            menuItem.isFavorite = true
+                            favorites.add(menuItem)
+                        } else {
+                            menuItem.isFavorite = false
+                            favorites.items.removeLast()
+                        }
+                       
+                    } label: {
+                        Image(systemName: "heart.circle.fill")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(menuItem.isFavorite ? .red : .secondary)
+                    }
                 }
             }
         }
@@ -82,7 +48,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(menuItem: .constant(MockMenu.data[0]))
+        DetailView(menuItem: .constant(MockMenu.data[2]))
     }
 }
 
@@ -140,5 +106,64 @@ private struct PopularView: View {
             )
             .padding()
         }
+    }
+}
+
+private struct DetailImageView: View {
+    var menuItem: MenuItem
+    
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            Image(menuItem.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: Constants.ScreenSize.height > 667 ? 400 : 300)
+                .clipped()
+            
+            if menuItem.rating > 4.5 {
+                PopularView()
+            }
+        }
+    }
+}
+
+struct DescriptionView: View {
+    var menuItem: MenuItem
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var order: Order
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            HStack {
+                Text(menuItem.title)
+                    .font(.title2)
+                    .bold()
+                Spacer()
+                Text("$\(String(format: "%.2f", menuItem.price))")
+                    .font(.title3)
+                    .bold()
+            }
+            
+            Text(menuItem.category.description())
+                .font(.subheadline)
+            
+            Text(menuItem.description)
+                .padding(.vertical)
+            
+            Text("\(menuItem.calories) Calories")
+                .font(.subheadline)
+            
+            Spacer()
+                .frame(height: Constants.ScreenSize.height > 667 ? 50 : 25)
+
+            Button {
+                order.add(menuItem)
+                self.presentationMode.wrappedValue.dismiss()
+            } label: {
+                GEButton(title: "Add to Order")
+            }
+        }
+        .frame(maxWidth: Constants.ScreenSize.width - 24)
+        .padding(.horizontal)
     }
 }

@@ -17,9 +17,12 @@ struct FavoritesView: View {
                     .navigationTitle("Favorites ❤️")
             } else {
                 VStack {
-                    List($favorites.items) { item in
-                        NavigationLink(destination: DetailView(menuItem: item)) {
+                    List {
+                        ForEach($favorites.items) { item in
                             MenuItemCell(menuItem: item)
+                        }
+                        .onDelete { indexSet in
+                            favorites.deleteItems(at: indexSet)
                         }
                     }
                     .listStyle(.plain)
