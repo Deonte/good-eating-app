@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0A57C828D7D259000347EA /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* Favorite.swift */; };
 		FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */; };
 		FD9D7B0828B29DB9006D7862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0728B29DB9006D7862 /* Assets.xcassets */; };
 		FD9D7B0B28B29DB9006D7862 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0A28B29DB9006D7862 /* Preview Assets.xcassets */; };
@@ -17,13 +18,17 @@
 		FDA813E028CD1CF600EF83B9 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA813DF28CD1CF600EF83B9 /* CategoryView.swift */; };
 		FDA813E228CD813100EF83B9 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA813E128CD813100EF83B9 /* MenuItemCell.swift */; };
 		FDA813E428CD924800EF83B9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA813E328CD924800EF83B9 /* DetailView.swift */; };
+		FDBD3EF628D795F7008362A6 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBD3EF528D795F7008362A6 /* AppTabView.swift */; };
+		FDBD3EFA28D79621008362A6 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBD3EF928D79621008362A6 /* OrderView.swift */; };
+		FDBD3EFC28D797D8008362A6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */; };
 		FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7228C893C600EFC570 /* Menu.swift */; };
 		FDDA8C7528C893E500EFC570 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7428C893E500EFC570 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD0A57C728D7D259000347EA /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		FD0DEB1628BCF1F400C34892 /* week-two-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "week-two-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		FD9D7B0028B29DB7006D7862 /* Good Eating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Eating.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DK's Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEatingApp.swift; sourceTree = "<group>"; };
 		FD9D7B0728B29DB9006D7862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD9D7B0A28B29DB9006D7862 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -36,6 +41,9 @@
 		FDA813E128CD813100EF83B9 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		FDA813E328CD924800EF83B9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FDADB80428C5216A0025930E /* myover-complicated-week-three-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "myover-complicated-week-three-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FDBD3EF528D795F7008362A6 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		FDBD3EF928D79621008362A6 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		FDDA8C7228C893C600EFC570 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FDDA8C7428C893E500EFC570 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,7 +81,7 @@
 		FD9D7B0128B29DB7006D7862 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD9D7B0028B29DB7006D7862 /* Good Eating.app */,
+				FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +113,9 @@
 				FD9D7B1628B2B5C4006D7862 /* HomeView.swift */,
 				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
 				FDA813E328CD924800EF83B9 /* DetailView.swift */,
+				FDBD3EF928D79621008362A6 /* OrderView.swift */,
+				FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */,
+				FDBD3EF528D795F7008362A6 /* AppTabView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 			children = (
 				FDDA8C7228C893C600EFC570 /* Menu.swift */,
 				FDDA8C7428C893E500EFC570 /* Order.swift */,
+				FD0A57C728D7D259000347EA /* Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,7 +182,7 @@
 			);
 			name = GoodEating;
 			productName = GoodEating;
-			productReference = FD9D7B0028B29DB7006D7862 /* Good Eating.app */;
+			productReference = FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */,
+				FD0A57C828D7D259000347EA /* Favorite.swift in Sources */,
 				FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */,
+				FDBD3EFC28D797D8008362A6 /* FavoritesView.swift in Sources */,
+				FDBD3EFA28D79621008362A6 /* OrderView.swift in Sources */,
 				FD9D7B1B28B2BE10006D7862 /* OnboardingView.swift in Sources */,
 				FDA813E428CD924800EF83B9 /* DetailView.swift in Sources */,
 				FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */,
@@ -233,6 +248,7 @@
 				FDA813E228CD813100EF83B9 /* MenuItemCell.swift in Sources */,
 				FDA813E028CD1CF600EF83B9 /* CategoryView.swift in Sources */,
 				FDDA8C7528C893E500EFC570 /* Order.swift in Sources */,
+				FDBD3EF628D795F7008362A6 /* AppTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +392,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.compilery.GoodEating;
-				PRODUCT_NAME = "Good Eating";
+				PRODUCT_NAME = "DK's Kitchen";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,7 +422,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.compilery.GoodEating;
-				PRODUCT_NAME = "Good Eating";
+				PRODUCT_NAME = "DK's Kitchen";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

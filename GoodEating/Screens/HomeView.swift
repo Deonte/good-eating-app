@@ -8,38 +8,44 @@
 import SwiftUI
 struct HomeView: View {
     @State private var isOnboarding = false
-    @State private var menuItems: [MenuItem] = MockMenu.data
-
+    @Binding var menuItems: [MenuItem]
+    
     var body: some View {
         NavigationView {
-            VStack {
-                HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
-                    .padding(.bottom)
-                
+            if menuItems.isEmpty {
+               Text("Loading...")
+                    .navigationBarHidden(true)
+            } else {
                 VStack {
-                    List(menuItems) { item in
-                        NavigationLink(destination: DetailView(menuItem: item)) {
-                            MenuItemCell(menuItem: item)
+                    HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
+                    
+                    VStack {
+                        List($menuItems) { item in
+                            NavigationLink(destination: DetailView(menuItem: item)) {
+                                MenuItemCell(menuItem: item)
+                            }
                         }
+                        .listStyle(.plain)
                     }
-                    .listStyle(.plain)
                 }
+                .navigationBarHidden(true)
             }
-            .navigationBarHidden(true)
+        }
+        .onAppear {
+            menuItems = MockMenu.data
         }
         .sheet(isPresented: $isOnboarding) {
             OnboardingView(isOnboarding: $isOnboarding)
         }
-        .onAppear {
-            print(MockMenu.data)
-        }
-        .background(Color(uiColor: .tertiarySystemBackground))
+        .background(
+            Color(uiColor: .secondarySystemBackground)
+            .ignoresSafeArea()
+        )
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
-            .previewInterfaceOrientation(.portrait)
+        HomeView(menuItems: .constant(MockMenu.data))
     }
 }

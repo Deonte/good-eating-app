@@ -8,7 +8,7 @@
 import SwiftUI
 struct OnboardingView: View {
     @Binding var isOnboarding: Bool
-    
+
     var body: some View {
         VStack {
             OnboardingHeaderView()
@@ -27,7 +27,7 @@ struct OnboardingView: View {
                     image: Constants.SFSymbol.star,
                     title: "Influence The Menu",
                     detail: "The power of your reviews help fellow customers while also giving the kitchen helpful feedback.",
-                    color: .accentColor
+                    color: .orange
                 )
 
                 FeatureView(
@@ -91,7 +91,7 @@ struct FeatureView: View {
 struct OnboardingHeaderView: View {
     var body: some View {
         HStack {
-            Text("Welcome to Good Eating")
+            Text("Welcome to DK's Kitchen")
                 .font(.title)
                 .bold()
             
@@ -100,8 +100,9 @@ struct OnboardingHeaderView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 13)
                     .frame(width: 60, height: 60)
-                    .foregroundColor(.orange)
-                Text("🍑")
+                    .foregroundColor(.white)
+                    .shadow(radius: 4)
+                Text("🥩")
                     .font(.system(size: 35))
             }
         }

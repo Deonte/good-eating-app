@@ -39,7 +39,7 @@ struct SymbolView: View {
     
     var body: some View {
         Image(systemName: image)
-            .font(.system(size: 40))
+            .font(.system(size: 30))
             .foregroundColor(color)
 
     }

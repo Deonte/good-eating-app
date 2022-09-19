@@ -8,22 +8,38 @@
 import SwiftUI
 
 struct MenuItemCell: View {
-    var menuItem: MenuItem
+    @Binding var menuItem: MenuItem
     
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(alignment: .top, spacing: 12) {
             MenuItemCellImageView(menuItem: menuItem)
             
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 5) {
                 Text(menuItem.title)
-                    .bold()
-                Text(menuItem.category.description())
+                    .font(.title3)
+                    .fontWeight(.medium)
+                
+                Text("$\(menuItem.price, specifier: "%.2f")")
+                    .foregroundColor(.secondary)
+                    .fontWeight(.semibold)
             }
             
             Spacer()
+            
+            if menuItem.rating > 4.5 {
+                Image(systemName: "star.circle.fill")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.yellow)
+            }
+            
+            if menuItem.isFavorite {
+                Image(systemName: "heart.circle.fill")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.red)
+            }
         }
-        .padding(.horizontal)
-        
     }
 }
 
@@ -31,23 +47,22 @@ struct MenuItemCell_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color(uiColor: .tertiarySystemBackground)
-            MenuItemCell(menuItem: MockMenu.data[0])
+            MenuItemCell(menuItem: .constant(MockMenu.data[4]))
         }
     }
 }
 
 private struct MenuItemCellImageView: View {
     let menuItem: MenuItem
-    
+
     var body: some View {
         ZStack {
-            Rectangle()
-                .frame(width: 60, height: 60)
+            Image(menuItem.image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 80, height: 80)
                 .cornerRadius(10)
-                .foregroundColor(menuItem.color.opacity(0.3))
             
-            Text(menuItem.image)
-                .font(.system(size: 30))
         }
     }
 }
