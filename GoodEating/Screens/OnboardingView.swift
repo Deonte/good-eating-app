@@ -89,22 +89,23 @@ struct FeatureView: View {
 }
 
 struct OnboardingHeaderView: View {
+    let frame: CGFloat = Constants.ScreenSize.height > 667 ? 200 : 150
     var body: some View {
-        HStack {
+        VStack {
             Text("Welcome to DK's Kitchen")
                 .font(.title)
                 .bold()
-            
-           Spacer()
-            
+                        
             ZStack {
-                RoundedRectangle(cornerRadius: 13)
-                    .frame(width: 60, height: 60)
+                RoundedRectangle(cornerRadius: Constants.ScreenSize.height > 667 ? 40 : 20)
+                    .frame(width: self.frame, height: self.frame)
                     .foregroundColor(.white)
                     .shadow(radius: 4)
+                
                 Text("🥩")
-                    .font(.system(size: 35))
+                    .font(.system(size: Constants.ScreenSize.height > 667 ? 130 : 90))
             }
+
         }
         .padding(.horizontal)
         .padding(.top)
