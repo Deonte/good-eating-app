@@ -66,22 +66,6 @@ struct GEButton: View {
     }
 }
 
-private struct HeaderImageView: View {
-    let menuItem: MenuItem
-    
-    var body: some View {
-        ZStack{
-            Rectangle()
-                .frame(maxHeight: Constants.ScreenSize.height / 1.5)
-            
-            Text(menuItem.image)
-                .font(.system(size: Constants.ScreenSize.width / 3))
-        }
-        .ignoresSafeArea()
-        .environmentObject(Order())
-    }
-}
-
 
 private struct PopularView: View {
     var body: some View {
@@ -117,7 +101,7 @@ private struct DetailImageView: View {
             Image(menuItem.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(height: Constants.ScreenSize.height > 667 ? 400 : 300)
+                .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
                 .clipped()
             
             if menuItem.rating > 4.5 {

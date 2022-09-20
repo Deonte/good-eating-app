@@ -8,7 +8,7 @@
 import SwiftUI
 struct HomeView: View {
     @State private var isOnboarding = false
-    @Binding var menuItems: [MenuItem]
+    @State var menuItems: [MenuItem] = MockMenu.data
     
     var body: some View {
         NavigationView {
@@ -20,10 +20,11 @@ struct HomeView: View {
                     HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
                     
                     VStack {
-                        List($menuItems) { item in
+                        List($menuItems, id: \.id) { item in
                             NavigationLink(destination: DetailView(menuItem: item)) {
                                 MenuItemCell(menuItem: item)
                             }
+                            .id(UUID())
                         }
                         .listStyle(.plain)
                     }
@@ -46,6 +47,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(menuItems: .constant(MockMenu.data))
+        HomeView()
     }
 }

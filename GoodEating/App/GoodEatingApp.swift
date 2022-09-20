@@ -9,11 +9,10 @@ import SwiftUI
 
 @main
 struct GoodEatingApp: App {
-    @State var menu = MockMenu.data
     
     var body: some Scene {
         WindowGroup {
-            AppTabView(menuItems: $menu)
+            AppTabView()
                 .environmentObject(Order())
                 .environmentObject(Favorites())
         }

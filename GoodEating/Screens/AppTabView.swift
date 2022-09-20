@@ -9,10 +9,9 @@ import SwiftUI
 
 struct AppTabView: View {
     @EnvironmentObject var order: Order
-    @Binding var menuItems: [MenuItem]
     var body: some View {
         TabView {
-            HomeView(menuItems: $menuItems)
+            HomeView()
                 .tabItem {
                     TabLabel(imageName: "menucard.fill",
                              label: "Menu")
@@ -36,7 +35,7 @@ struct AppTabView: View {
 
 struct AppTabView_Previews: PreviewProvider {
     static var previews: some View {
-        AppTabView(menuItems: .constant(MockMenu.data))
+        AppTabView()
             .environmentObject(Order())
     }
 }
