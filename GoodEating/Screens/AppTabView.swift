@@ -26,11 +26,22 @@ struct AppTabView: View {
             
             OrderView()
                 .tabItem {
-                    TabLabel(imageName: order.items.isEmpty ? "cart" : "cart",
+                    TabLabel(imageName: "cart",
                              label: "Checkout")
                 }
                 .badge(order.items.count)
         }
+        .onAppear {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+            appearance.backgroundColor = UIColor(Color(uiColor: .systemBackground).opacity(0.2))
+            
+            // Use this appearance when scrolling behind the TabView:
+            UITabBar.appearance().standardAppearance = appearance
+            // Use this appearance when scrolled all the way up:
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
+
     }
 }
 

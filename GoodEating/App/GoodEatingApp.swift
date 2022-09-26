@@ -13,6 +13,8 @@ struct GoodEatingApp: App {
     var body: some Scene {
         WindowGroup {
             AppTabView()
+                .environmentObject(OrderViewModel())
+                .environmentObject(FavoritesViewModel())
         }
     }
 }

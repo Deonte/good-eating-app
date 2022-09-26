@@ -68,6 +68,14 @@
 			path = Playgrounds;
 			sourceTree = "<group>";
 		};
+		FD5F7BC528E24AB900CDABA4 /* Menu View */ = {
+			isa = PBXGroup;
+			children = (
+				FD9D7B1628B2B5C4006D7862 /* HomeView.swift */,
+			);
+			path = "Menu View";
+			sourceTree = "<group>";
+		};
 		FD7C6A3528E1E18F002AACD0 /* Order View */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +136,7 @@
 		FD9D7B1528B2B4A7006D7862 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FD9D7B1628B2B5C4006D7862 /* HomeView.swift */,
+				FD5F7BC528E24AB900CDABA4 /* Menu View */,
 				FDA813E328CD924800EF83B9 /* DetailView.swift */,
 				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
 				FD7C6A3528E1E18F002AACD0 /* Order View */,

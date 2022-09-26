@@ -25,16 +25,12 @@ struct HomeView: View {
                             NavigationLink(destination: DetailView(menuItem: item)) {
                                 MenuItemCell(menuItem: item)
                             }
-                            .id(UUID())
                         }
                         .listStyle(.plain)
                     }
                 }
                 .navigationBarHidden(true)
             }
-        }
-        .onAppear {
-            menuItems = MockMenu.data
         }
         .sheet(isPresented: $isOnboarding) {
             OnboardingView(isOnboarding: $isOnboarding)
