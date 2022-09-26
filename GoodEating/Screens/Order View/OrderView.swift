@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderView: View {
-    @EnvironmentObject var order: Order
+    @EnvironmentObject var order: OrderViewModel
 
     var body: some View {
         NavigationView {
@@ -51,13 +51,13 @@ struct OrderView: View {
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
         OrderView()
-            .environmentObject(Order())
+            .environmentObject(OrderViewModel())
     }
 }
 
 struct OrderButton: View {
     @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject var order: Order
+    @EnvironmentObject var order: OrderViewModel
     
     var body: some View {
         Text("$\(order.totalPrice, specifier: "%.2f") - Place Order")

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Favorites: ObservableObject {
+final class FavoritesViewModel: ObservableObject {
     @Published var items: [MenuItem] = []
     
     func add(_ menuItem: MenuItem) {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @EnvironmentObject var favorites: Favorites
+    @EnvironmentObject var favorites: FavoritesViewModel
     
     var body: some View {
         NavigationView {
@@ -39,7 +39,7 @@ struct FavoritesView: View {
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
         FavoritesView()
-            .environmentObject(Favorites())
+            .environmentObject(FavoritesViewModel())
     }
 }
 

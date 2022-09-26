@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AppTabView: View {
-    @EnvironmentObject var order: Order
+    @EnvironmentObject var order: OrderViewModel
+    
     var body: some View {
         TabView {
             HomeView()
@@ -36,7 +37,7 @@ struct AppTabView: View {
 struct AppTabView_Previews: PreviewProvider {
     static var previews: some View {
         AppTabView()
-            .environmentObject(Order())
+            .environmentObject(OrderViewModel())
     }
 }
 

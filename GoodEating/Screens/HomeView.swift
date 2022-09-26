@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 struct HomeView: View {
     @State private var isOnboarding = false
     @State var menuItems: [MenuItem] = MockMenu.data

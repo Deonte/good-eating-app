@@ -31,18 +31,7 @@ enum CourseCategory: CaseIterable {
     }
 }
 
-protocol Menu {
-    var category: CourseCategory { get }
-    var image: String { get }
-    var title: String { get }
-    var description: String { get }
-    var calories: Int { get }
-    var price: Float { get }
-    var isFavorite: Bool { get set }
-    var rating: Float { get }
-}
-
-struct MenuItem: Menu, Identifiable  {
+struct MenuItem: Identifiable {
     let id = UUID()
     var category: CourseCategory
     var image: String

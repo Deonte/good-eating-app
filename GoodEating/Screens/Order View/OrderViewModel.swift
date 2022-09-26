@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class Order: ObservableObject {
+final class OrderViewModel: ObservableObject {
     @Published var items: [MenuItem] = []
     
     var totalPrice: Float {

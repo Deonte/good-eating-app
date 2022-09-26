@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD0A57C828D7D259000347EA /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* Favorite.swift */; };
+		FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */; };
 		FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */; };
 		FD9D7B0828B29DB9006D7862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0728B29DB9006D7862 /* Assets.xcassets */; };
 		FD9D7B0B28B29DB9006D7862 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0A28B29DB9006D7862 /* Preview Assets.xcassets */; };
@@ -22,11 +22,11 @@
 		FDBD3EFA28D79621008362A6 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBD3EF928D79621008362A6 /* OrderView.swift */; };
 		FDBD3EFC28D797D8008362A6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */; };
 		FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7228C893C600EFC570 /* Menu.swift */; };
-		FDDA8C7528C893E500EFC570 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7428C893E500EFC570 /* Order.swift */; };
+		FDDA8C7528C893E500EFC570 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FD0A57C728D7D259000347EA /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		FD0DEB1628BCF1F400C34892 /* week-two-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "week-two-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DK's Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEatingApp.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		FDBD3EF928D79621008362A6 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		FDDA8C7228C893C600EFC570 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		FDDA8C7428C893E500EFC570 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +66,24 @@
 				FDADB80428C5216A0025930E /* myover-complicated-week-three-hw.playground */,
 			);
 			path = Playgrounds;
+			sourceTree = "<group>";
+		};
+		FD7C6A3528E1E18F002AACD0 /* Order View */ = {
+			isa = PBXGroup;
+			children = (
+				FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */,
+				FDBD3EF928D79621008362A6 /* OrderView.swift */,
+			);
+			path = "Order View";
+			sourceTree = "<group>";
+		};
+		FD7C6A3628E1E1B6002AACD0 /* Favorites View */ = {
+			isa = PBXGroup;
+			children = (
+				FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */,
+				FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */,
+			);
+			path = "Favorites View";
 			sourceTree = "<group>";
 		};
 		FD9D7AF728B29DB7006D7862 = {
@@ -111,10 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				FD9D7B1628B2B5C4006D7862 /* HomeView.swift */,
-				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
 				FDA813E328CD924800EF83B9 /* DetailView.swift */,
-				FDBD3EF928D79621008362A6 /* OrderView.swift */,
-				FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */,
+				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
+				FD7C6A3528E1E18F002AACD0 /* Order View */,
+				FD7C6A3628E1E1B6002AACD0 /* Favorites View */,
 				FDBD3EF528D795F7008362A6 /* AppTabView.swift */,
 			);
 			path = Screens;
@@ -123,7 +141,6 @@
 		FD9D7B1828B2B6C2006D7862 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				FDDA8C7628C8941300EFC570 /* Extensions */,
 				FD9D7B2128B2C30E006D7862 /* Constants.swift */,
 			);
 			path = Utils;
@@ -152,17 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				FDDA8C7228C893C600EFC570 /* Menu.swift */,
-				FDDA8C7428C893E500EFC570 /* Order.swift */,
-				FD0A57C728D7D259000347EA /* Favorite.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		FDDA8C7628C8941300EFC570 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */,
-				FD0A57C828D7D259000347EA /* Favorite.swift in Sources */,
+				FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */,
 				FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */,
 				FDBD3EFC28D797D8008362A6 /* FavoritesView.swift in Sources */,
 				FDBD3EFA28D79621008362A6 /* OrderView.swift in Sources */,
@@ -247,7 +255,7 @@
 				FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */,
 				FDA813E228CD813100EF83B9 /* MenuItemCell.swift in Sources */,
 				FDA813E028CD1CF600EF83B9 /* CategoryView.swift in Sources */,
-				FDDA8C7528C893E500EFC570 /* Order.swift in Sources */,
+				FDDA8C7528C893E500EFC570 /* OrderViewModel.swift in Sources */,
 				FDBD3EF628D795F7008362A6 /* AppTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

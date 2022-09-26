@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var menuItem: MenuItem
-    @EnvironmentObject var favorites: Favorites
+    @EnvironmentObject var favorites: FavoritesViewModel
     
     var body: some View {
         ScrollView(.vertical) {
@@ -114,7 +114,7 @@ private struct DetailImageView: View {
 struct DescriptionView: View {
     var menuItem: MenuItem
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var order: Order
+    @EnvironmentObject var order: OrderViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
