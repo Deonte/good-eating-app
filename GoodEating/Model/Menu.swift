@@ -30,7 +30,7 @@ enum CourseCategory: CaseIterable {
         }
     }
 }
-
+// Model
 struct MenuItem: Identifiable, Equatable {
     let id = UUID()
     var category: CourseCategory

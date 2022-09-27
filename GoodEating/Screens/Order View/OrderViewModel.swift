@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+// MVVM
 final class OrderViewModel: ObservableObject {
     @Published var items: [MenuItem] = []
     

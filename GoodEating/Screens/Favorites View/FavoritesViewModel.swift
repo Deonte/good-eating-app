@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// MVVM
 final class FavoritesViewModel: ObservableObject {
     @Published var items: [MenuItem] = []
     
