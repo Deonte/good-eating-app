@@ -31,7 +31,7 @@ enum CourseCategory: CaseIterable {
     }
 }
 
-struct MenuItem: Identifiable {
+struct MenuItem: Identifiable, Equatable {
     let id = UUID()
     var category: CourseCategory
     var image: String

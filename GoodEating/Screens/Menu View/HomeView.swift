@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @State private var isOnboarding = false
     @State var menuItems: [MenuItem] = MockMenu.data
+    @ObservedObject var favorites: FavoritesViewModel
+    @ObservedObject var order: OrderViewModel
     
     var body: some View {
         NavigationView {
@@ -22,7 +24,7 @@ struct HomeView: View {
                     
                     VStack {
                         List($menuItems, id: \.id) { item in
-                            NavigationLink(destination: DetailView(menuItem: item)) {
+                            NavigationLink(destination: DetailView(menuItem: item, favorites: favorites, order: order)) {
                                 MenuItemCell(menuItem: item)
                             }
                         }
@@ -44,6 +46,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(favorites: FavoritesViewModel(), order: OrderViewModel())
     }
 }

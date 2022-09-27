@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct OrderView: View {
-    @EnvironmentObject var order: OrderViewModel
+    @ObservedObject var order: OrderViewModel
 
     var body: some View {
         NavigationView {
             if order.items.isEmpty {
-                EmptyStateView(emoji: "🧾", text: "You haven't selected anything just yet. Check out the menu, you might find something you like.")
+                EmptyStateView(emoji: "🧾",
+                               text: "You haven't selected anything just yet. Check out the menu, you might find something you like.")
                     .navigationTitle("Order 🧾")
             } else {
                 VStack {
@@ -35,7 +36,7 @@ struct OrderView: View {
                     Button {
                         print("order placed")
                     } label: {
-                        OrderButton()
+                        OrderButton(order: order)
                     }
                 }
                 .navigationTitle("Order 🧾")
@@ -50,14 +51,13 @@ struct OrderView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderView()
-            .environmentObject(OrderViewModel())
+        OrderView(order: OrderViewModel())
     }
 }
 
 struct OrderButton: View {
     @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject var order: OrderViewModel
+    @ObservedObject var order: OrderViewModel
     
     var body: some View {
         Text("$\(order.totalPrice, specifier: "%.2f") - Place Order")

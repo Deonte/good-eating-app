@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @EnvironmentObject var favorites: FavoritesViewModel
+    @ObservedObject var viewModel: FavoritesViewModel
     
     var body: some View {
         NavigationView {
-            if favorites.items.isEmpty {
+            if viewModel.items.isEmpty {
                 EmptyStateView(emoji: "❤️", text: "You haven't favorited anything. Yet...")
                     .navigationTitle("Favorites ❤️")
             } else {
                 VStack {
                     List {
-                        ForEach($favorites.items) { item in
+                        ForEach($viewModel.items) { item in
                             MenuItemCell(menuItem: item)
                         }
                         .onDelete { indexSet in
-                            favorites.deleteItems(at: indexSet)
+                            viewModel.deleteItems(at: indexSet)
                         }
                     }
                     .listStyle(.plain)
@@ -38,8 +38,7 @@ struct FavoritesView: View {
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritesView()
-            .environmentObject(FavoritesViewModel())
+        FavoritesView(viewModel: FavoritesViewModel())
     }
 }
 
