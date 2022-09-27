@@ -1,4 +1,4 @@
-# Good Eating *(Working Title)*
+# DK's Kitchen
 
 # About the app
 
