@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */; };
 		FD651E6528E25A0000429B40 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD651E6428E25A0000429B40 /* MenuViewModel.swift */; };
+		FD7D7E7F28F0B98C00AC0DC7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */; };
 		FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */; };
 		FD9D7B0828B29DB9006D7862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0728B29DB9006D7862 /* Assets.xcassets */; };
 		FD9D7B0B28B29DB9006D7862 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0A28B29DB9006D7862 /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		FD651E6428E25A0000429B40 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DK's Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEatingApp.swift; sourceTree = "<group>"; };
 		FD9D7B0728B29DB9006D7862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				FDDA8C7228C893C600EFC570 /* Menu.swift */,
+				FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				FDBD3EFA28D79621008362A6 /* OrderView.swift in Sources */,
 				FD9D7B1B28B2BE10006D7862 /* OnboardingView.swift in Sources */,
 				FDA813E428CD924800EF83B9 /* DetailView.swift in Sources */,
+				FD7D7E7F28F0B98C00AC0DC7 /* Response.swift in Sources */,
 				FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */,
 				FD9D7B1728B2B5C4006D7862 /* HomeView.swift in Sources */,
 				FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */,
