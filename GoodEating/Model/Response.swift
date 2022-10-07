@@ -8,7 +8,13 @@
 import Foundation
 
 struct Response: Codable {
+    let total: Int
     let result: [Item]
+    
+    private enum CodingKeys: String, CodingKey {
+        case total = "Total Menu"
+        case result = "Result"
+    }
 }
 
 struct Item: Codable, Identifiable {
@@ -18,8 +24,8 @@ struct Item: Codable, Identifiable {
     let description: String
     
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
         case images
+        case id = "_id"
         case menuName = "menuname"
         case description
     }

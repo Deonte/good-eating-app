@@ -13,10 +13,12 @@ struct HomeView: View {
     @ObservedObject var favorites: FavoritesViewModel
     @ObservedObject var order: OrderViewModel
     
+    @ObservedObject var networkManager = NetworkManager()
+    
     var body: some View {
         NavigationView {
             if menuItems.isEmpty {
-               Text("Loading...")
+                Text("Loading...")
                     .navigationBarHidden(true)
             } else {
                 VStack {
@@ -39,8 +41,18 @@ struct HomeView: View {
         }
         .background(
             Color(uiColor: .secondarySystemBackground)
-            .ignoresSafeArea()
+                .ignoresSafeArea()
         )
+        .onAppear {
+            Task {
+                do {
+                    try await networkManager.downloadItems()
+                    print(networkManager.items)
+                } catch let error {
+                    print(error)
+                }
+            }
+        }
     }
 }
 
