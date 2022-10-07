@@ -28,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		FD0DEB1628BCF1F400C34892 /* week-two-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "week-two-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FD651E6428E25A0000429B40 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DK's Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEatingApp.swift; sourceTree = "<group>"; };
@@ -42,7 +41,6 @@
 		FDA813DF28CD1CF600EF83B9 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		FDA813E128CD813100EF83B9 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		FDA813E328CD924800EF83B9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		FDADB80428C5216A0025930E /* myover-complicated-week-three-hw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "myover-complicated-week-three-hw.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FDBD3EF528D795F7008362A6 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		FDBD3EF928D79621008362A6 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -61,15 +59,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FD0DEB1528BCF19A00C34892 /* Playgrounds */ = {
-			isa = PBXGroup;
-			children = (
-				FD0DEB1628BCF1F400C34892 /* week-two-hw.playground */,
-				FDADB80428C5216A0025930E /* myover-complicated-week-three-hw.playground */,
-			);
-			path = Playgrounds;
-			sourceTree = "<group>";
-		};
 		FD5F7BC528E24AB900CDABA4 /* Menu View */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				FD9D7B1428B2AFAD006D7862 /* README.md */,
-				FD0DEB1528BCF19A00C34892 /* Playgrounds */,
 				FD9D7B0228B29DB7006D7862 /* GoodEating */,
 				FD9D7B0128B29DB7006D7862 /* Products */,
 			);
