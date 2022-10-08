@@ -41,9 +41,51 @@ class NetworkManager: ObservableObject {
         guard let menuResponse = try? decoder.decode(Response.self, from: data) else {
             throw NetworkError.responseDecodingFailed
         }
-                
+        
         await MainActor.run {
             items = menuResponse.result
+        }
+    }
+    
+    // Assignment 5
+    func downloadAndPrintCookies() async {
+        func setCookies(name: String? = nil, value: String? = nil) {
+            Task { @MainActor in
+               print("Name: \(name ?? "N/A")/n Value: \(value ?? "N/A")")
+            }
+        }
+        
+        guard let url = URL(string: "https://www.raywenderlich.com ") else {
+            setCookies()
+            return
+        }
+        
+        do {
+            let (_, response) = try await URLSession.shared.data(from: url)
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  let fields = httpResponse.allHeaderFields as? [String: String],
+                  let cookie = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url).first
+            else {
+                setCookies()
+                
+                return
+            }
+            
+            setCookies(name: cookie.name, value: cookie.value)
+            
+            var cookieProperties: [HTTPCookiePropertyKey: Any] = [:]
+            cookieProperties[.name] = cookie.name
+            cookieProperties[.value] = cookie.value
+            cookieProperties[.domain] = cookie.domain
+            
+            if let myCookie = HTTPCookie(properties: cookieProperties) {
+                HTTPCookieStorage.shared.setCookie(myCookie)
+                HTTPCookieStorage.shared.deleteCookie(cookie)
+            }
+            
+        } catch {
+            setCookies()
         }
     }
     
