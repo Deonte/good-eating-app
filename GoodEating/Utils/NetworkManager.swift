@@ -14,6 +14,7 @@ class NetworkManager: ObservableObject {
     enum NetworkError: Error {
         case invalidResponse
         case responseDecodingFailed
+        case invalidURL
     }
     
     private let session: URLSession
@@ -36,7 +37,7 @@ class NetworkManager: ObservableObject {
         }
         
         // Assignment 2: Download Data
-        print("Data Downloaded \(data)")
+        print("\nData Downloaded: \(data)")
         
         guard let menuResponse = try? decoder.decode(Response.self, from: data) else {
             throw NetworkError.responseDecodingFailed
@@ -47,17 +48,16 @@ class NetworkManager: ObservableObject {
         }
     }
     
-    // Assignment 5
-    func downloadAndPrintCookies() async {
-        func setCookies(name: String? = nil, value: String? = nil) {
-            Task { @MainActor in
-                print("Name: \(name ?? "N/A")/n Value: \(value ?? "N/A")")
-            }
+    // Assignment 5: Download and print cookie
+    func downloadAndPrintCookies() async throws {
+        func setCookies(name: String, value: String) {
+            print("\n------------ C 🍪 🍪 K I E ------------\n")
+            print("Name: \(name)\nValue: \(value)")
+            print("\n---------------------------------------\n")
         }
         
-        guard let url = URL(string: "https://www.raywenderlich.com ") else {
-            setCookies()
-            return
+        guard let url = URL(string: "https://www.raywenderlich.com") else {
+            throw NetworkError.invalidURL
         }
         
         do {
@@ -67,24 +67,12 @@ class NetworkManager: ObservableObject {
                   let fields = httpResponse.allHeaderFields as? [String: String],
                   let cookie = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url).first
             else {
-                setCookies()
-                return
+                throw NetworkError.invalidResponse
             }
             
             setCookies(name: cookie.name, value: cookie.value)
-            
-            var cookieProperties: [HTTPCookiePropertyKey: Any] = [:]
-            cookieProperties[.name] = cookie.name
-            cookieProperties[.value] = cookie.value
-            cookieProperties[.domain] = cookie.domain
-            
-            if let myCookie = HTTPCookie(properties: cookieProperties) {
-                HTTPCookieStorage.shared.setCookie(myCookie)
-                HTTPCookieStorage.shared.deleteCookie(cookie)
-            }
-            
         } catch {
-            setCookies()
+           throw NetworkError.responseDecodingFailed
         }
     }
     

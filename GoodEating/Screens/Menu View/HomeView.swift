@@ -47,7 +47,8 @@ struct HomeView: View {
             Task {
                 do {
                     try await networkManager.downloadItems()
-                    print(networkManager.items.map { $0.menuName })
+                    print("Downloaded \(networkManager.items.count) menu items.")
+                    try await networkManager.downloadAndPrintCookies()
                 } catch let error {
                     print(error)
                 }
