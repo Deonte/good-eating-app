@@ -51,7 +51,7 @@ class NetworkManager: ObservableObject {
     func downloadAndPrintCookies() async {
         func setCookies(name: String? = nil, value: String? = nil) {
             Task { @MainActor in
-               print("Name: \(name ?? "N/A")/n Value: \(value ?? "N/A")")
+                print("Name: \(name ?? "N/A")/n Value: \(value ?? "N/A")")
             }
         }
         
@@ -68,7 +68,6 @@ class NetworkManager: ObservableObject {
                   let cookie = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url).first
             else {
                 setCookies()
-                
                 return
             }
             
