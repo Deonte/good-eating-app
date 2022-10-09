@@ -12,9 +12,7 @@ struct HomeView: View {
     @State var menuItems: [MenuItem] = MockMenu.data
     @ObservedObject var favorites: FavoritesViewModel
     @ObservedObject var order: OrderViewModel
-    
-    @ObservedObject var networkManager = NetworkManager()
-    
+        
     var body: some View {
         NavigationView {
             if menuItems.isEmpty {
@@ -43,17 +41,6 @@ struct HomeView: View {
             Color(uiColor: .secondarySystemBackground)
                 .ignoresSafeArea()
         )
-        .onAppear {
-            Task {
-                do {
-                    try await networkManager.downloadItems()
-                    print("Downloaded \(networkManager.items.count) menu items.")
-                    try await networkManager.downloadAndPrintCookies()
-                } catch let error {
-                    print(error)
-                }
-            }
-        }
     }
 }
 
