@@ -16,8 +16,16 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             if menuItems.isEmpty {
-                Text("Loading...")
-                    .navigationBarHidden(true)
+                VStack {
+                    HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
+
+                    Spacer()
+                    
+                    Text("Loading...")
+                        .navigationBarHidden(true)
+                    
+                    Spacer()
+                }
             } else {
                 VStack {
                     HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
