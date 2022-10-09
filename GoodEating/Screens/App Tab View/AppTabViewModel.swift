@@ -12,6 +12,11 @@ final class AppTabViewModel: ObservableObject {
     @Published var favorites = FavoritesViewModel()
     @Published var networkManager = NetworkManager()
     
+    @Published private var animate = false
+    @Published private var showSplash = true
+    @Published private var animationEnded = false
+    
+    
     func setTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
@@ -21,7 +26,7 @@ final class AppTabViewModel: ObservableObject {
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }
     
-    func animate() {
+    func animateSplashScreen() {
         
     }
     

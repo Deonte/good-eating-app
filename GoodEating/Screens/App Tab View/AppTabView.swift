@@ -46,9 +46,8 @@ struct AppTabView: View {
             ZStack {
                 Color.red
             }
-            
         }
-        .onAppear(perform: viewModel.animate)
+        .onAppear(perform: viewModel.animateSplashScreen)
     }
     
   
