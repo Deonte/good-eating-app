@@ -8,9 +8,13 @@
 import Foundation
 
 final class MenuViewModel: ObservableObject {
-    @Published var menuItems: [MenuItem] = MockMenu.data
+    @Published var menuItems: [MenuItem] = []
     @Published var favorites: [MenuItem] = []
     @Published var order: [MenuItem] = []
+    
+    init() {
+        getMenuItems()
+    }
     
     var totalPrice: Float {
         order.reduce(0) { $0 + $1.price }
@@ -32,6 +36,12 @@ final class MenuViewModel: ObservableObject {
     
     func deleteOrderItems(at offesets: IndexSet) {
         order.remove(atOffsets: offesets)
+    }
+    
+    func getMenuItems() {
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.menuItems = MockMenu.data
+        }
     }
     
 }

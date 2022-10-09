@@ -12,9 +12,9 @@ final class AppTabViewModel: ObservableObject {
     @Published var favorites = FavoritesViewModel()
     @Published var networkManager = NetworkManager()
     
-    @Published private var animate = false
-    @Published private var showSplash = true
-    @Published private var animationEnded = false
+    @Published var animate = false
+    @Published var showSplash = true
+    @Published var animationEnded = false
     
     
     func setTabBarAppearance() {
@@ -27,7 +27,14 @@ final class AppTabViewModel: ObservableObject {
     }
     
     func animateSplashScreen() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
+            animate.toggle()
+        }
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+            showSplash.toggle()
+            animationEnded.toggle()
+        }
     }
     
     func downloadData() async {
