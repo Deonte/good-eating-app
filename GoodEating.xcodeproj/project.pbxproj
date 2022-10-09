@@ -27,6 +27,7 @@
 		FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7228C893C600EFC570 /* Menu.swift */; };
 		FDDA8C7528C893E500EFC570 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */; };
 		FDDC5F1228F34D8000EDC17B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDC5F1128F34D8000EDC17B /* Launch Screen.storyboard */; };
+		FDDC5F1528F3507300EDC17B /* AppTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDC5F1428F3507300EDC17B /* AppTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FDDA8C7228C893C600EFC570 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		FDDC5F1128F34D8000EDC17B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		FDDC5F1428F3507300EDC17B /* AppTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,12 +135,12 @@
 		FD9D7B1528B2B4A7006D7862 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FDDC5F1328F3505700EDC17B /* App Tab View */,
 				FD5F7BC528E24AB900CDABA4 /* Menu View */,
 				FDA813E328CD924800EF83B9 /* DetailView.swift */,
 				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
 				FD7C6A3528E1E18F002AACD0 /* Order View */,
 				FD7C6A3628E1E1B6002AACD0 /* Favorites View */,
-				FDBD3EF528D795F7008362A6 /* AppTabView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -179,6 +181,15 @@
 				FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FDDC5F1328F3505700EDC17B /* App Tab View */ = {
+			isa = PBXGroup;
+			children = (
+				FDBD3EF528D795F7008362A6 /* AppTabView.swift */,
+				FDDC5F1428F3507300EDC17B /* AppTabViewModel.swift */,
+			);
+			path = "App Tab View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDC5F1528F3507300EDC17B /* AppTabViewModel.swift in Sources */,
 				FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */,
 				FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */,
 				FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */,
