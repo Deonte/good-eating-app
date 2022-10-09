@@ -36,7 +36,7 @@ struct AppTabView: View {
                 }
             }
             
-            // Splash Screen
+            // Splash Screen : Assignment 1
             ZStack {
                 Color(uiColor: .secondarySystemBackground)
                 
