@@ -46,14 +46,7 @@ struct OnboardingView: View {
             Button {
                 isOnboarding = false
             } label: {
-                Text("Continue")
-                    .bold()
-                    .padding()
-                    .frame(maxWidth: 400)
-                    .frame(maxHeight: 50)
-                    .foregroundColor(.white)
-                    .background(Color.accentColor)
-                    .cornerRadius(12)
+                GEButton(title: "Continue")
                     .padding(.horizontal)
                     .padding(.bottom)
             }

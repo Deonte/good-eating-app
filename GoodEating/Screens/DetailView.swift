@@ -63,10 +63,9 @@ struct GEButton: View {
             .font(.headline)
             .foregroundColor(colorScheme == .light ? Color.white: Color.black)
             .background(Color.accentColor)
-            .cornerRadius(10)
+            .cornerRadius(12)
     }
 }
-
 
 private struct PopularView: View {
     var body: some View {
@@ -140,7 +139,7 @@ struct DescriptionView: View {
                 .font(.subheadline)
             
             Spacer()
-                .frame(height: Constants.ScreenSize.height > 667 ? 50 : 25)
+                .frame(height: Constants.ScreenSize.height > 667 ? 100 : 25)
 
             Button {
                 order.add(menuItem)

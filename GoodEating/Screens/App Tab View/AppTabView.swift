@@ -35,8 +35,6 @@ struct AppTabView: View {
                         .badge(viewModel.order.items.count)
                 }
             }
-            .scaleEffect(viewModel.animationEnded ? 1 : 10)
-            .animation(.spring(response: 0.4, dampingFraction: 0.7, blendDuration: 0.5), value: viewModel.animationEnded)
             
             // Splash Screen
             ZStack {
