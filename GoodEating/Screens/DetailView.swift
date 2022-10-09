@@ -86,6 +86,7 @@ private struct PopularView: View {
             .padding(8)
             .background(
                 Rectangle()
+                    .foregroundColor(.black)
                     .blur(radius: 20)
                     .cornerRadius(20)
             )
