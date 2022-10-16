@@ -16,7 +16,6 @@ final class AppTabViewModel: ObservableObject {
     @Published var showSplash = true
     @Published var animationEnded = false
     
-    
     func setTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)

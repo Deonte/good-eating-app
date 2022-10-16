@@ -23,26 +23,26 @@ struct DetailView: View {
             .padding(.bottom)
             .navigationViewStyle(.stack)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(menuItem.category.description())
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        switch menuItem.isFavorite {
-                        case true:
-                            menuItem.isFavorite = false
-                            favorites.remove(menuItem: menuItem)
-                        case false:
-                            menuItem.isFavorite = true
-                            favorites.add(menuItem)
-                        }
-                    } label: {
-                        Image(systemName: "heart.circle.fill")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(menuItem.isFavorite ? .red : .secondary)
-                    }
-                }
-            }
+            .navigationTitle(menuItem.menuName)
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button {
+//                        switch menuItem.isFavorite {
+//                        case true:
+//                            menuItem.isFavorite = false
+//                            favorites.remove(menuItem: menuItem)
+//                        case false:
+//                            menuItem.isFavorite = true
+//                            favorites.add(menuItem)
+//                        }
+//                    } label: {
+//                        Image(systemName: "heart.circle.fill")
+//                            .resizable()
+//                            .frame(width: 25, height: 25)
+//                            .foregroundColor(menuItem.isFavorite ? .red : .secondary)
+//                    }
+//                }
+//            }
         }
     }
 }
@@ -96,18 +96,39 @@ private struct PopularView: View {
 
 private struct DetailImageView: View {
     var menuItem: MenuItem
+    @ObservedObject var networkManager = NetworkManager()
+    @MainActor @State var menuImage = UIImage()
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Image(menuItem.image)
+            Image(uiImage: menuImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
                 .clipped()
+                .onAppear {
+                    Task {
+                        await downloadImage()
+                    }
+                }
+//            if menuItem.rating > 4.5 {
+//                PopularView()
+//            }
+        }
+    }
+    
+    private func downloadImage() async {
+        guard let imageURL = URL(string: menuItem.images[0]) else {
+            return
+        }
+        
+        do {
+            let data = try await networkManager.downloadImage(at: imageURL)
+            guard let image = UIImage(data: data) else { return }
             
-            if menuItem.rating > 4.5 {
-                PopularView()
-            }
+            self.menuImage = image
+        } catch {
+            print(error)
         }
     }
 }
@@ -120,26 +141,26 @@ struct DescriptionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             HStack {
-                Text(menuItem.title)
+                Text(menuItem.menuName)
                     .font(.title2)
                     .bold()
                 Spacer()
-                Text("$\(String(format: "%.2f", menuItem.price))")
-                    .font(.title3)
-                    .bold()
+//                Text("$\(String(format: "%.2f", menuItem.price))")
+//                    .font(.title3)
+//                    .bold()
             }
             
-            Text(menuItem.category.description())
-                .font(.subheadline)
+//            Text(menuItem.category.description())
+//                .font(.subheadline)
             
             Text(menuItem.description)
                 .padding(.vertical)
             
-            Text("\(menuItem.calories) Calories")
-                .font(.subheadline)
+//            Text("\(menuItem.calories) Calories")
+//                .font(.subheadline)
             
             Spacer()
-                .frame(height: Constants.ScreenSize.height > 667 ? 50 : 25)
+//                .frame(height: Constants.ScreenSize.height > 667 ? 50 : 25)
 
             Button {
                 order.add(menuItem)

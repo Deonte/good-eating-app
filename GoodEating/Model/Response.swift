@@ -9,7 +9,7 @@ import Foundation
 
 struct Response: Codable {
     let total: Int
-    let result: [Item]
+    let result: [MenuItem]
     
     private enum CodingKeys: String, CodingKey {
         case total = "Total Menu"
@@ -17,7 +17,7 @@ struct Response: Codable {
     }
 }
 
-struct Item: Codable, Identifiable {
+struct MenuItem: Codable, Identifiable {
     let images: [String]
     let id: String
     let menuName: String

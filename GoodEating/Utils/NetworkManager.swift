@@ -8,12 +8,13 @@
 import SwiftUI
 
 class NetworkManager: ObservableObject {
-    @Published var items: [Item] = []
+    @Published var items: [MenuItem] = []
     
     enum NetworkError: Error {
         case invalidResponse
         case responseDecodingFailed
         case invalidURL
+        case failedToDownloadImage
     }
     
     private let session: URLSession
@@ -45,6 +46,24 @@ class NetworkManager: ObservableObject {
             items = menuResponse.result
         }
     }
+    
+    
+    func downloadImage(at url: URL) async throws -> Data {
+      let (downloadURL, response) = try await session.download(from: url)
+
+      guard let httpResponse = response as? HTTPURLResponse,
+        httpResponse.statusCode == 200
+      else {
+        throw NetworkError.invalidResponse
+      }
+
+      do {
+        return try Data(contentsOf: downloadURL)
+      } catch {
+          throw NetworkError.failedToDownloadImage
+      }
+    }
+    
     
     func downloadAndPrintCookies() async throws {
         func setCookies(name: String, value: String) {

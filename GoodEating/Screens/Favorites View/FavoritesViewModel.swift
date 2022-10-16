@@ -18,12 +18,12 @@ final class FavoritesViewModel: ObservableObject {
         items.remove(atOffsets: offesets)
     }
     
-    func remove(menuItem: MenuItem) {
-        guard let index = items.firstIndex(where: { $0 == menuItem }) else {
-            print("Error deleting")
-            return
-        }
-        items.remove(at: index)
-    }
+//    func remove(menuItem: MenuItem) {
+//        guard let index = items.firstIndex(where: { $0 == menuItem }) else {
+//            print("Error deleting")
+//            return
+//        }
+//        items.remove(at: index)
+//    }
     
 }

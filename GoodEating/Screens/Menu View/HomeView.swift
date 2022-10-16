@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var isOnboarding = false
-    @State var menuItems: [MenuItem] = MockMenu.data
+    @MainActor @Binding var menuItems: [MenuItem]
     @ObservedObject var favorites: FavoritesViewModel
     @ObservedObject var order: OrderViewModel
         
@@ -54,6 +54,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(favorites: FavoritesViewModel(), order: OrderViewModel())
+        HomeView(menuItems: .constant(MockMenu.data), favorites: FavoritesViewModel(), order: OrderViewModel())
     }
 }

@@ -11,9 +11,9 @@ import SwiftUI
 final class OrderViewModel: ObservableObject {
     @Published var items: [MenuItem] = []
     
-    var totalPrice: Float {
-        items.reduce(0) { $0 + $1.price }
-    }
+//    var totalPrice: Float {
+//        items.reduce(0) { $0 + $1.price }
+//    }
     
     func add(_ menuItem: MenuItem) {
         items.append(menuItem)

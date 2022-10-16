@@ -60,12 +60,19 @@ struct OrderButton: View {
     @ObservedObject var order: OrderViewModel
     
     var body: some View {
-        Text("$\(order.totalPrice, specifier: "%.2f") - Place Order")
+        Text("$10.00 - Place Order")
             .frame(width: Constants.ScreenSize.width - 24, height: 50)
             .font(.headline)
             .foregroundColor(colorScheme == .light ? Color.white : Color.black)
             .background(Color.accentColor)
             .cornerRadius(10)
             .padding(.bottom)
+//        Text("$\(order.totalPrice, specifier: "%.2f") - Place Order")
+//            .frame(width: Constants.ScreenSize.width - 24, height: 50)
+//            .font(.headline)
+//            .foregroundColor(colorScheme == .light ? Color.white : Color.black)
+//            .background(Color.accentColor)
+//            .cornerRadius(10)
+//            .padding(.bottom)
     }
 }
