@@ -89,16 +89,7 @@ struct MockMenu {
                  price: 3.49,
                  isFavorite: false,
                  rating: 4.6),
-        
-        MenuItem(category: .drinks,
-                 image: "foodiesfeed.com_iced-black-coffee-with-golden-spoon",
-                 title: "Golden Ice Coffee",
-                 description: "Black Iced Coffee. 👀",
-                 calories: 100,
-                 price: 4.49,
-                 isFavorite: false,
-                 rating: 3.0),
-        
+    
         MenuItem(category: .entrees,
                  image: "foodiesfeed.com_cheese-burger-with-fried-onion-on-a-tray",
                  title: "The Big One",
@@ -127,15 +118,6 @@ struct MockMenu {
                  rating: 5.0),
         
         MenuItem(category: .entrees,
-                 image: "foodiesfeed.com_homemade-pizza-with-a-lot-of-cheese",
-                 title: "All Cheese Pizza",
-                 description: "A delicious cheesy special.",
-                 calories: 1340,
-                 price: 16.99,
-                 isFavorite: false,
-                 rating: 3.9),
-        
-        MenuItem(category: .entrees,
                  image: "foodiesfeed.com_tacos-with-pulled-pork-fresh-vegetables-and-cream",
                  title: "Pulled Pork Taco's",
                  description: "Tasty pulled pork taco's.",
@@ -161,15 +143,6 @@ struct MockMenu {
                  price: 6.99,
                  isFavorite: false,
                  rating: 4.1),
-        
-        MenuItem(category: .desserts,
-                 image: "foodiesfeed.com_banana-oat-chocolate-cookies",
-                 title: "Banana Oat Chocolate Chip Cookies",
-                 description: "Delicious homemade cookies, served with two scoops of ice cream.",
-                 calories: 800,
-                 price: 8.49,
-                 isFavorite: false,
-                 rating: 3.8),
         
         MenuItem(category: .desserts,
                  image: "foodiesfeed.com_small-donut-with-raspberry-on-top",

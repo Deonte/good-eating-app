@@ -10,6 +10,7 @@
 		FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */; };
 		FD651E6528E25A0000429B40 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD651E6428E25A0000429B40 /* MenuViewModel.swift */; };
 		FD7D7E7F28F0B98C00AC0DC7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */; };
+		FD7D7E8128F0BDDA00AC0DC7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */; };
 		FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */; };
 		FD9D7B0828B29DB9006D7862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0728B29DB9006D7862 /* Assets.xcassets */; };
 		FD9D7B0B28B29DB9006D7862 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0A28B29DB9006D7862 /* Preview Assets.xcassets */; };
@@ -25,12 +26,15 @@
 		FDBD3EFC28D797D8008362A6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */; };
 		FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7228C893C600EFC570 /* Menu.swift */; };
 		FDDA8C7528C893E500EFC570 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */; };
+		FDDC5F1228F34D8000EDC17B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDC5F1128F34D8000EDC17B /* Launch Screen.storyboard */; };
+		FDDC5F1528F3507300EDC17B /* AppTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDC5F1428F3507300EDC17B /* AppTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		FD651E6428E25A0000429B40 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DK's Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEatingApp.swift; sourceTree = "<group>"; };
 		FD9D7B0728B29DB9006D7862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		FDBD3EFB28D797D8008362A6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		FDDA8C7228C893C600EFC570 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		FDDC5F1128F34D8000EDC17B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		FDDC5F1428F3507300EDC17B /* AppTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,12 +135,12 @@
 		FD9D7B1528B2B4A7006D7862 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FDDC5F1328F3505700EDC17B /* App Tab View */,
 				FD5F7BC528E24AB900CDABA4 /* Menu View */,
 				FDA813E328CD924800EF83B9 /* DetailView.swift */,
 				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
 				FD7C6A3528E1E18F002AACD0 /* Order View */,
 				FD7C6A3628E1E1B6002AACD0 /* Favorites View */,
-				FDBD3EF528D795F7008362A6 /* AppTabView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -143,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				FD9D7B2128B2C30E006D7862 /* Constants.swift */,
+				FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				FD9D7B0728B29DB9006D7862 /* Assets.xcassets */,
+				FDDC5F1128F34D8000EDC17B /* Launch Screen.storyboard */,
 				FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */,
 			);
 			path = App;
@@ -173,6 +181,15 @@
 				FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FDDC5F1328F3505700EDC17B /* App Tab View */ = {
+			isa = PBXGroup;
+			children = (
+				FDBD3EF528D795F7008362A6 /* AppTabView.swift */,
+				FDDC5F1428F3507300EDC17B /* AppTabViewModel.swift */,
+			);
+			path = "App Tab View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDC5F1228F34D8000EDC17B /* Launch Screen.storyboard in Resources */,
 				FD9D7B0B28B29DB9006D7862 /* Preview Assets.xcassets in Resources */,
 				FD9D7B0828B29DB9006D7862 /* Assets.xcassets in Resources */,
 			);
@@ -245,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDC5F1528F3507300EDC17B /* AppTabViewModel.swift in Sources */,
 				FDDA8C7328C893C600EFC570 /* Menu.swift in Sources */,
 				FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */,
 				FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */,
@@ -255,6 +274,7 @@
 				FDA813E428CD924800EF83B9 /* DetailView.swift in Sources */,
 				FD7D7E7F28F0B98C00AC0DC7 /* Response.swift in Sources */,
 				FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */,
+				FD7D7E8128F0BDDA00AC0DC7 /* NetworkManager.swift in Sources */,
 				FD9D7B1728B2B5C4006D7862 /* HomeView.swift in Sources */,
 				FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */,
 				FDA813E228CD813100EF83B9 /* MenuItemCell.swift in Sources */,
@@ -392,9 +412,13 @@
 				DEVELOPMENT_TEAM = WD9RGBDJX8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodEating/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -422,9 +446,13 @@
 				DEVELOPMENT_TEAM = WD9RGBDJX8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodEating/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

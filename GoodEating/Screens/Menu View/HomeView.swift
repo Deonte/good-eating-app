@@ -12,12 +12,20 @@ struct HomeView: View {
     @State var menuItems: [MenuItem] = MockMenu.data
     @ObservedObject var favorites: FavoritesViewModel
     @ObservedObject var order: OrderViewModel
-    
+        
     var body: some View {
         NavigationView {
             if menuItems.isEmpty {
-               Text("Loading...")
-                    .navigationBarHidden(true)
+                VStack {
+                    HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
+
+                    Spacer()
+                    
+                    Text("Loading...")
+                        .navigationBarHidden(true)
+                    
+                    Spacer()
+                }
             } else {
                 VStack {
                     HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
@@ -39,7 +47,7 @@ struct HomeView: View {
         }
         .background(
             Color(uiColor: .secondarySystemBackground)
-            .ignoresSafeArea()
+                .ignoresSafeArea()
         )
     }
 }
