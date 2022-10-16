@@ -12,7 +12,6 @@ struct AppTabView: View {
     
     var body: some View {
         ZStack {
-            // Content
             ZStack {
                 TabView {
                     HomeView(favorites: viewModel.favorites, order: viewModel.order)
@@ -36,7 +35,6 @@ struct AppTabView: View {
                 }
             }
             
-            // Splash Screen : Assignment 1
             ZStack {
                 Color(uiColor: .secondarySystemBackground)
                 
