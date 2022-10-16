@@ -10,7 +10,6 @@ import SwiftUI
 class NetworkManager: ObservableObject {
     @Published var items: [Item] = []
     
-    // Assignment 3: Error Handling
     enum NetworkError: Error {
         case invalidResponse
         case responseDecodingFailed
@@ -19,8 +18,7 @@ class NetworkManager: ObservableObject {
     
     private let session: URLSession
     private let sessionConfiguration: URLSessionConfiguration
-    // Assignment 4: ATS
-    private let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu")!
+    private let url = URL(string: "https://foodbukka.herokuapp.com/api/v1/menu")!
     private let decoder = JSONDecoder()
     
     init() {
@@ -48,7 +46,6 @@ class NetworkManager: ObservableObject {
         }
     }
     
-    // Assignment 5: Download and print cookie
     func downloadAndPrintCookies() async throws {
         func setCookies(name: String, value: String) {
             print("\n------------ C 🍪 🍪 K I E ------------\n")

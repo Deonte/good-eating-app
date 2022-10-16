@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */; };
+		FD42F95228FBB84100432616 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42F95128FBB84100432616 /* PersistenceManager.swift */; };
 		FD651E6528E25A0000429B40 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD651E6428E25A0000429B40 /* MenuViewModel.swift */; };
 		FD7D7E7F28F0B98C00AC0DC7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */; };
 		FD7D7E8128F0BDDA00AC0DC7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		FD42F95128FBB84100432616 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		FD651E6428E25A0000429B40 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				FD9D7B2128B2C30E006D7862 /* Constants.swift */,
 				FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */,
+				FD42F95128FBB84100432616 /* PersistenceManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */,
 				FDA813E228CD813100EF83B9 /* MenuItemCell.swift in Sources */,
 				FDA813E028CD1CF600EF83B9 /* CategoryView.swift in Sources */,
+				FD42F95228FBB84100432616 /* PersistenceManager.swift in Sources */,
 				FDDA8C7528C893E500EFC570 /* OrderViewModel.swift in Sources */,
 				FDBD3EF628D795F7008362A6 /* AppTabView.swift in Sources */,
 			);

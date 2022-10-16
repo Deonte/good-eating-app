@@ -49,7 +49,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(menuItem: .constant(MockMenu.data[2]), favorites: FavoritesViewModel(), order: OrderViewModel())
+        DetailView(menuItem: .constant(MockMenu.data[0]), favorites: FavoritesViewModel(), order: OrderViewModel())
     }
 }
 
@@ -139,7 +139,7 @@ struct DescriptionView: View {
                 .font(.subheadline)
             
             Spacer()
-                .frame(height: Constants.ScreenSize.height > 667 ? 100 : 25)
+                .frame(height: Constants.ScreenSize.height > 667 ? 50 : 25)
 
             Button {
                 order.add(menuItem)
