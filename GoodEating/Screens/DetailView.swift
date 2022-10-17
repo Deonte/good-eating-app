@@ -23,26 +23,26 @@ struct DetailView: View {
             .padding(.bottom)
             .navigationViewStyle(.stack)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(menuItem.category.description())
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        switch menuItem.isFavorite {
-                        case true:
-                            menuItem.isFavorite = false
-                            favorites.remove(menuItem: menuItem)
-                        case false:
-                            menuItem.isFavorite = true
-                            favorites.add(menuItem)
-                        }
-                    } label: {
-                        Image(systemName: "heart.circle.fill")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(menuItem.isFavorite ? .red : .secondary)
-                    }
-                }
-            }
+            .navigationTitle(menuItem.name)
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button {
+//                        switch menuItem.isFavorite {
+//                        case true:
+//                            menuItem.isFavorite = false
+//                            favorites.remove(menuItem: menuItem)
+//                        case false:
+//                            menuItem.isFavorite = true
+//                            favorites.add(menuItem)
+//                        }
+//                    } label: {
+//                        Image(systemName: "heart.circle.fill")
+//                            .resizable()
+//                            .frame(width: 25, height: 25)
+//                            .foregroundColor(menuItem.isFavorite ? .red : .secondary)
+//                    }
+//                }
+//            }
         }
     }
 }
@@ -99,13 +99,13 @@ private struct DetailImageView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Image(menuItem.image)
+            Image(menuItem.img)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
                 .clipped()
             
-            if menuItem.rating > 4.5 {
+            if menuItem.rate > 4 {
                 PopularView()
             }
         }
@@ -120,7 +120,7 @@ struct DescriptionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             HStack {
-                Text(menuItem.title)
+                Text(menuItem.name)
                     .font(.title2)
                     .bold()
                 Spacer()
@@ -129,13 +129,10 @@ struct DescriptionView: View {
                     .bold()
             }
             
-            Text(menuItem.category.description())
-                .font(.subheadline)
-            
-            Text(menuItem.description)
+            Text(menuItem.dsc)
                 .padding(.vertical)
             
-            Text("\(menuItem.calories) Calories")
+            Text("Origin: \(menuItem.country)")
                 .font(.subheadline)
             
             Spacer()

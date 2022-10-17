@@ -39,9 +39,8 @@ final class AppTabViewModel: ObservableObject {
     
     func downloadData() async {
         do {
-            try await networkManager.downloadItems()
+            try await networkManager.downloadMenu()
             print("Downloaded \(networkManager.menu.count) menu items.")
-            try await networkManager.downloadAndPrintCookies()
         } catch let error {
             print(error)
         }

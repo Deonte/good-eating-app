@@ -15,7 +15,7 @@ struct MenuItemCell: View {
             MenuItemCellImageView(menuItem: menuItem)
             
             VStack(alignment: .leading, spacing: 5) {
-                Text(menuItem.title)
+                Text(menuItem.name)
                     .font(.title3)
                     .fontWeight(.medium)
                 
@@ -26,19 +26,19 @@ struct MenuItemCell: View {
             
             Spacer()
             
-            if menuItem.rating > 4.5 {
+            if menuItem.rate > 4 {
                 Image(systemName: "star.circle.fill")
                     .resizable()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.yellow)
             }
             
-            if menuItem.isFavorite {
-                Image(systemName: "heart.circle.fill")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.red)
-            }
+//            if menuItem.isFavorite {
+//                Image(systemName: "heart.circle.fill")
+//                    .resizable()
+//                    .frame(width: 20, height: 20)
+//                    .foregroundColor(.red)
+//            }
         }
     }
 }
@@ -57,7 +57,7 @@ private struct MenuItemCellImageView: View {
 
     var body: some View {
         ZStack {
-            Image(menuItem.image)
+            Image(menuItem.img)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 80, height: 80)

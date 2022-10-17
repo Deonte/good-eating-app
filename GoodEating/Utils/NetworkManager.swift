@@ -27,7 +27,7 @@ class NetworkManager: ObservableObject {
         self.decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
-    func downloadItems() async throws {
+    func downloadMenu() async throws {
         let (data, response) = try await session.data(from: self.url)
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -36,12 +36,12 @@ class NetworkManager: ObservableObject {
         
         print("\nData Downloaded: \(data)")
         
-        guard let menuResponse = try? decoder.decode(MenuResponse.self, from: data) else {
+        guard let menuResponse = try? decoder.decode([MenuItem].self, from: data) else {
             throw NetworkError.responseDecodingFailed
         }
         
         await MainActor.run {
-            menu = menuResponse.menu
+            menu = menuResponse
         }
     }
     

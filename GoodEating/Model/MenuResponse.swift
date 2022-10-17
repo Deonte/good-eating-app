@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct MenuResponse: Codable {
-    let menu: [MenuItem]
-}
+//struct MenuResponse: Codable {
+//    let menu: [MenuItem]
+//}
 
-struct MenuItem: Codable {
+struct MenuItem: Codable, Identifiable {
     let id: String
     let img: String
     let name: String
     let dsc: String
-    let price: Int
-    let rate: Int
+    let price: Float
+    let rate: Float
     let country: String
 }
 
