@@ -10,7 +10,6 @@
 		FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */; };
 		FD5604AF28FD054B00FE0C7D /* MenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5604AE28FD054B00FE0C7D /* MenuResponse.swift */; };
 		FD651E6528E25A0000429B40 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD651E6428E25A0000429B40 /* MenuViewModel.swift */; };
-		FD7D7E7F28F0B98C00AC0DC7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */; };
 		FD7D7E8128F0BDDA00AC0DC7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */; };
 		FD9D7B0428B29DB7006D7862 /* GoodEatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */; };
 		FD9D7B0828B29DB9006D7862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9D7B0728B29DB9006D7862 /* Assets.xcassets */; };
@@ -34,7 +33,6 @@
 		FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		FD5604AE28FD054B00FE0C7D /* MenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuResponse.swift; sourceTree = "<group>"; };
 		FD651E6428E25A0000429B40 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-		FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DK's Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9D7B0328B29DB7006D7862 /* GoodEatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEatingApp.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 		FDDA8C7128C893B200EFC570 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FD7D7E7E28F0B98C00AC0DC7 /* Response.swift */,
 				FD5604AE28FD054B00FE0C7D /* MenuResponse.swift */,
 			);
 			path = Model;
@@ -272,7 +269,6 @@
 				FD5604AF28FD054B00FE0C7D /* MenuResponse.swift in Sources */,
 				FD9D7B1B28B2BE10006D7862 /* OnboardingView.swift in Sources */,
 				FDA813E428CD924800EF83B9 /* DetailView.swift in Sources */,
-				FD7D7E7F28F0B98C00AC0DC7 /* Response.swift in Sources */,
 				FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */,
 				FD7D7E8128F0BDDA00AC0DC7 /* NetworkManager.swift in Sources */,
 				FD9D7B1728B2B5C4006D7862 /* HomeView.swift in Sources */,

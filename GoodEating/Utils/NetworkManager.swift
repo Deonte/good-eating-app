@@ -8,9 +8,8 @@
 import SwiftUI
 
 class NetworkManager: ObservableObject {
-    @Published var items: [Item] = []
+    @Published var menu: [MenuItem] = []
     
-    // Assignment 3: Error Handling
     enum NetworkError: Error {
         case invalidResponse
         case responseDecodingFailed
@@ -19,8 +18,7 @@ class NetworkManager: ObservableObject {
     
     private let session: URLSession
     private let sessionConfiguration: URLSessionConfiguration
-    // Assignment 4: ATS
-    private let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu")!
+    private let url = URL(string: "https://ig-food-menus.herokuapp.com/best-foods")!
     private let decoder = JSONDecoder()
     
     init() {
@@ -36,43 +34,14 @@ class NetworkManager: ObservableObject {
             throw NetworkError.invalidResponse
         }
         
-        // Assignment 2: Download Data
         print("\nData Downloaded: \(data)")
         
-        guard let menuResponse = try? decoder.decode(Response.self, from: data) else {
+        guard let menuResponse = try? decoder.decode(MenuResponse.self, from: data) else {
             throw NetworkError.responseDecodingFailed
         }
         
         await MainActor.run {
-            items = menuResponse.result
-        }
-    }
-    
-    // Assignment 5: Download and print cookie
-    func downloadAndPrintCookies() async throws {
-        func setCookies(name: String, value: String) {
-            print("\n------------ C 🍪 🍪 K I E ------------\n")
-            print("Name: \(name)\nValue: \(value)")
-            print("\n---------------------------------------\n")
-        }
-        
-        guard let url = URL(string: "https://www.raywenderlich.com") else {
-            throw NetworkError.invalidURL
-        }
-        
-        do {
-            let (_, response) = try await URLSession.shared.data(from: url)
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  let fields = httpResponse.allHeaderFields as? [String: String],
-                  let cookie = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url).first
-            else {
-                throw NetworkError.invalidResponse
-            }
-            
-            setCookies(name: cookie.name, value: cookie.value)
-        } catch {
-           throw NetworkError.responseDecodingFailed
+            menu = menuResponse.menu
         }
     }
     
