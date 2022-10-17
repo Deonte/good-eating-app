@@ -18,7 +18,9 @@ struct MenuItemCell: View {
                 Text(menuItem.name)
                     .font(.title3)
                     .fontWeight(.medium)
-                
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.6)
+
                 Text("$\(menuItem.price, specifier: "%.2f")")
                     .foregroundColor(.secondary)
                     .fontWeight(.semibold)
@@ -32,13 +34,6 @@ struct MenuItemCell: View {
                     .frame(width: 20, height: 20)
                     .foregroundColor(.yellow)
             }
-            
-//            if menuItem.isFavorite {
-//                Image(systemName: "heart.circle.fill")
-//                    .resizable()
-//                    .frame(width: 20, height: 20)
-//                    .foregroundColor(.red)
-//            }
         }
     }
 }
@@ -53,16 +48,36 @@ struct MenuItemCell_Previews: PreviewProvider {
 }
 
 private struct MenuItemCellImageView: View {
-    let menuItem: MenuItem
 
+    let menuItem: MenuItem
+    
     var body: some View {
         ZStack {
-            Image(menuItem.img)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 80, height: 80)
-                .cornerRadius(10)
-            
+            AsyncImage(url: URL(string: menuItem.img)!) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(10)
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(10)
+                case .failure:
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(10)
+                @unknown default:
+                    EmptyView()
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(10)
+                }
+            }
         }
     }
 }
+

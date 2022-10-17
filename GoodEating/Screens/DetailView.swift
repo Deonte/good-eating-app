@@ -94,16 +94,37 @@ private struct PopularView: View {
     }
 }
 
+
 private struct DetailImageView: View {
     var menuItem: MenuItem
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Image(menuItem.img)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
-                .clipped()
+            AsyncImage(url: URL(string: menuItem.img)!) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
+                        .clipped()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
+                        .clipped()
+                case .failure:
+                    Image(systemName: "photo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
+                        .clipped()
+                        .padding()
+                @unknown default:
+                    EmptyView()
+                        .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
+                }
+            }
             
             if menuItem.rate > 4 {
                 PopularView()
@@ -130,13 +151,15 @@ struct DescriptionView: View {
             }
             
             Text(menuItem.dsc)
+                .lineLimit(nil)
+                .minimumScaleFactor(0.7)
                 .padding(.vertical)
             
             Text("Origin: \(menuItem.country)")
                 .font(.subheadline)
             
             Spacer()
-                .frame(height: Constants.ScreenSize.height > 667 ? 100 : 25)
+                .frame(height: Constants.ScreenSize.height > 667 ? 50 : 25)
 
             Button {
                 order.add(menuItem)

@@ -46,22 +46,6 @@ class NetworkManager: ObservableObject {
         }
     }
     
-    func downloadImage(at url: URL) async throws -> Data {
-      let (downloadURL, response) = try await session.download(from: url)
-
-      guard let httpResponse = response as? HTTPURLResponse,
-        httpResponse.statusCode == 200
-      else {
-        throw NetworkError.invalidResponse
-      }
-
-      do {
-        return try Data(contentsOf: downloadURL)
-      } catch {
-          throw NetworkError.failedToDownloadImage
-      }
-    }
-    
 }
 
 
