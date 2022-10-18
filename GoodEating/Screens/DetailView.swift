@@ -116,7 +116,7 @@ private struct DetailImageView: View {
                 case .failure:
                     Image(systemName: "photo")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                         .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
                         .clipped()
                         .padding()

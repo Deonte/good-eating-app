@@ -21,7 +21,7 @@ struct HomeView: View {
 
                     Spacer()
                     
-                    Text("Loading...")
+                    ProgressView()
                         .navigationBarHidden(true)
                     
                     Spacer()

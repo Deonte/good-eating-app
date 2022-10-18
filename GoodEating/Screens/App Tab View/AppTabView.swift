@@ -33,7 +33,13 @@ struct AppTabView: View {
                         }
                         .badge(viewModel.order.items.count)
                 }
+                .scaleEffect(viewModel.animationEnded ? 1 : 5)
+                .animation(.spring(response: 0.4,
+                                   dampingFraction: 0.7,
+                                   blendDuration: 0.5),
+                           value: viewModel.animationEnded)
             }
+            
             
             ZStack {
                 Color(uiColor: .secondarySystemBackground)
@@ -62,15 +68,18 @@ struct AppTabView: View {
         .onAppear {
             viewModel.setTabBarAppearance()
             viewModel.animateSplashScreen()
+            
+            URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
+
             Task {
                 // Download Data and Display menu from NetworkManager
 //                await viewModel.downloadData()
                 
                 // Download Data using Network Manager and Display menu from JSON file.
-//                await viewModel.downloadDataAndLoadJSON()
+                await viewModel.downloadDataAndLoadJSON()
                 
                 // Download Data using Network Manager and Display menu from PList file.
-                await viewModel.downloadDataAndLoadPlist()
+//                await viewModel.downloadDataAndLoadPlist()
             }
         }
     }

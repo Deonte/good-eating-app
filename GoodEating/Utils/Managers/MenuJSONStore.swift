@@ -21,6 +21,7 @@ final class MenuJSONStore {
             try JSONEncoder()
                 .encode(menu)
                 .write(to: fileURL)
+            print(fileURL)
             print("Succesfully Saved JSON!")
         } catch {
             print("Error writing json data.")

@@ -53,30 +53,9 @@ private struct MenuItemCellImageView: View {
     
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: menuItem.img)!) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                        .frame(width: 80, height: 80)
-                        .cornerRadius(10)
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 80, height: 80)
-                        .cornerRadius(10)
-                case .failure:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                        .cornerRadius(10)
-                @unknown default:
-                    EmptyView()
-                        .frame(width: 80, height: 80)
-                        .cornerRadius(10)
-                }
-            }
+            ImageLoadingView(url: menuItem.img)
+                .frame(width: 80, height: 80)
+                .cornerRadius(10)
         }
     }
 }
