@@ -14,7 +14,7 @@ struct AppTabView: View {
         ZStack {
             ZStack {
                 TabView {
-                    HomeView(menuItems: $viewModel.networkManager.menu, favorites: viewModel.favorites, order: viewModel.order)
+                    HomeView(menuItems: $viewModel.menu, favorites: viewModel.favorites, order: viewModel.order)
                         .tabItem {
                             TabLabel(imageName: "menucard.fill",
                                      label: "Menu")

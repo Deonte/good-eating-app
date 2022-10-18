@@ -16,6 +16,7 @@ final class AppTabViewModel: ObservableObject {
     @Published var showSplash = true
     @Published var animationEnded = false
     
+    @Published var menu: [MenuItem] = []
     
     func setTabBarAppearance() {
         let appearance = UITabBarAppearance()
@@ -38,11 +39,36 @@ final class AppTabViewModel: ObservableObject {
     }
     
     func downloadData() async {
+        guard menu.isEmpty else { return }
         do {
             try await networkManager.downloadMenu()
-            print("Downloaded \(networkManager.menu.count) menu items.")
+            await MainActor.run {
+                menu = networkManager.menu
+            }
         } catch let error {
             print(error)
         }
     }
+    
+    func downloadDataAndLoadJSON() async {
+        guard menu.isEmpty else { return }
+        do {
+            try await networkManager.downloadMenu()
+            menu = MenuJSONStore.shared.readData()
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func downloadDataAndLoadPlist() async {
+        guard menu.isEmpty else { return }
+        do {
+            try await networkManager.downloadMenu()
+            menu = MenuPlistStore.shared.readData()
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    
 }
