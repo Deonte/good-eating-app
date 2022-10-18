@@ -53,8 +53,10 @@ final class AppTabViewModel: ObservableObject {
     func downloadDataAndLoadJSON() async {
         guard menu.isEmpty else { return }
         do {
-            try await networkManager.downloadMenu()
-            menu = MenuJSONStore.shared.readData()
+            try await networkManager.downloadMenuAndSaveToJSON()
+            await MainActor.run {
+                menu = MenuJSONStore.shared.readData()
+            }
         } catch let error {
             print(error)
         }
@@ -63,8 +65,10 @@ final class AppTabViewModel: ObservableObject {
     func downloadDataAndLoadPlist() async {
         guard menu.isEmpty else { return }
         do {
-            try await networkManager.downloadMenu()
-            menu = MenuPlistStore.shared.readData()
+            try await networkManager.downloadMenuAndSavePlist()
+            await MainActor.run {
+                menu = MenuPlistStore.shared.readData()
+            }
         } catch let error {
             print(error)
         }

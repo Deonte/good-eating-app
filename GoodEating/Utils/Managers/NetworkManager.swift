@@ -57,11 +57,6 @@ class NetworkManager: ObservableObject {
         
         // Save Menu to Menu Store
         MenuJSONStore.shared.write(menuResponse)
-        
-        await MainActor.run {
-            // Load Menu from MenuStore
-            menu = MenuJSONStore.shared.readData()
-        }
     }
     
     func downloadMenuAndSavePlist() async throws {
@@ -77,11 +72,6 @@ class NetworkManager: ObservableObject {
         
         // Save Menu to Property List
         MenuPlistStore.shared.write(menuResponse)
-        
-        await MainActor.run {
-            // Load Menu from Property List
-            menu = MenuPlistStore.shared.readData()
-        }
     }
     
 }

@@ -63,7 +63,14 @@ struct AppTabView: View {
             viewModel.setTabBarAppearance()
             viewModel.animateSplashScreen()
             Task {
-                await viewModel.downloadData()
+                // Download Data and Display menu from NetworkManager
+//                await viewModel.downloadData()
+                
+                // Download Data using Network Manager and Display menu from JSON file.
+//                await viewModel.downloadDataAndLoadJSON()
+                
+                // Download Data using Network Manager and Display menu from PList file.
+                await viewModel.downloadDataAndLoadPlist()
             }
         }
     }
