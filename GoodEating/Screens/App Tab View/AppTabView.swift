@@ -14,13 +14,13 @@ struct AppTabView: View {
         ZStack {
             ZStack {
                 TabView {
-                    HomeView(menuItems: $viewModel.menu, favorites: viewModel.favorites, order: viewModel.order)
+                    HomeView(menuItems: $viewModel.menu, order: viewModel.order)
                         .tabItem {
                             TabLabel(imageName: "menucard.fill",
                                      label: "Menu")
                         }
                     
-                    FavoritesView(viewModel: viewModel.favorites)
+                    FavoritesView(order: viewModel.order)
                         .tabItem {
                             TabLabel(imageName: "heart.fill",
                                      label: "Favorites")

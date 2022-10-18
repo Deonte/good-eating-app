@@ -9,7 +9,6 @@ import SwiftUI
 
 final class AppTabViewModel: ObservableObject {
     @Published var order = OrderViewModel()
-    @Published var favorites = FavoritesViewModel()
     @Published var networkManager = NetworkManager()
     
     @Published var animate = false

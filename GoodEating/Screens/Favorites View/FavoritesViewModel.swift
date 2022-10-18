@@ -6,15 +6,23 @@
 //
 
 import Foundation
-// MVVM
+import CoreData
+
 final class FavoritesViewModel: ObservableObject {
-    @Published var items: [MenuItem] = []
+    @Published var activeSortIndex = 0
     
-    func add(_ menuItem: MenuItem) {
-        items.append(menuItem)
-    }
-    
-    func deleteItems(at offesets: IndexSet) {
-        items.remove(atOffsets: offesets)
-    }
+    let sortTypes = [
+      (name: "Name",
+       descriptors: [SortDescriptor(\FavoriteMenuItem.name, order: .forward)]
+      ),
+      (
+        name: "Rating",
+        descriptors: [SortDescriptor(\FavoriteMenuItem.rate, order: .reverse)]
+      ),
+       (
+        name: "Price",
+        descriptors: [SortDescriptor(\FavoriteMenuItem.price, order: .reverse)]
+       )
+    ]
 }
+

@@ -20,7 +20,7 @@ struct OrderView: View {
                 VStack {
                     VStack {
                         List {
-                            ForEach($order.items) { item in
+                            ForEach(order.items) { item in
                                 MenuItemCell(menuItem: item)
                             }
                             .onDelete { indexSet in

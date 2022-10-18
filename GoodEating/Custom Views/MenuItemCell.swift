@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MenuItemCell: View {
-    @Binding var menuItem: MenuItem
-    
+    var menuItem: MenuItem
+    @State private var isFavorite = false
+
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             MenuItemCellImageView(menuItem: menuItem)
@@ -25,6 +26,9 @@ struct MenuItemCell: View {
                     .foregroundColor(.secondary)
                     .fontWeight(.semibold)
             }
+            .onAppear {
+                isFavorite = PersistenceManager.shared.checkIfFavorite(menuItem.id)
+            }
             
             Spacer()
             
@@ -34,6 +38,13 @@ struct MenuItemCell: View {
                     .frame(width: 20, height: 20)
                     .foregroundColor(.yellow)
             }
+            
+            if isFavorite {
+                Image(systemName: "heart.circle.fill")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.red)
+            }
         }
     }
 }
@@ -42,7 +53,7 @@ struct MenuItemCell_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color(uiColor: .tertiarySystemBackground)
-            MenuItemCell(menuItem: .constant(MockMenu.data[4]))
+            MenuItemCell(menuItem: MockMenu.data[0])
         }
     }
 }

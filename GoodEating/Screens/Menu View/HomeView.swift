@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @State private var isOnboarding = false
     @MainActor @Binding var menuItems: [MenuItem]
-    @ObservedObject var favorites: FavoritesViewModel
     @ObservedObject var order: OrderViewModel
         
     var body: some View {
@@ -31,8 +30,8 @@ struct HomeView: View {
                     HeaderView(username: "Deonté", isOnboarding: $isOnboarding)
                     
                     VStack {
-                        List($menuItems, id: \.id) { item in
-                            NavigationLink(destination: DetailView(menuItem: item, favorites: favorites, order: order)) {
+                        List(menuItems, id: \.id) { item in
+                            NavigationLink(destination: DetailView(menuItem: item, order: order)) {
                                 MenuItemCell(menuItem: item)
                             }
                         }
@@ -54,6 +53,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(menuItems: .constant(MockMenu.data), favorites: FavoritesViewModel(), order: OrderViewModel())
+        HomeView(menuItems: .constant(MockMenu.data), order: OrderViewModel())
     }
 }

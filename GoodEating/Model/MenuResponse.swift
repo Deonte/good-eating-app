@@ -7,10 +7,6 @@
 
 import Foundation
 
-//struct MenuResponse: Codable {
-//    let menu: [MenuItem]
-//}
-
 struct MenuItem: Codable, Identifiable {
     let id: String
     let img: String

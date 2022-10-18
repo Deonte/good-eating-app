@@ -8,26 +8,57 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @ObservedObject var viewModel: FavoritesViewModel
+    @ObservedObject var viewModel = FavoritesViewModel()
+    @ObservedObject var order: OrderViewModel
+
+    @FetchRequest(
+        sortDescriptors: [],
+      animation: .default)
+    var favorites: FetchedResults<FavoriteMenuItem>
     
     var body: some View {
         NavigationView {
-            if viewModel.items.isEmpty {
+            if favorites.isEmpty {
                 EmptyStateView(emoji: "❤️", text: "You haven't favorited anything. Yet...")
                     .navigationTitle("Favorites ❤️")
             } else {
                 VStack {
                     List {
-                        ForEach($viewModel.items) { item in
-                            MenuItemCell(menuItem: item)
+                        ForEach(favorites) { favorite in
+                            NavigationLink(destination: DetailView(menuItem: favorite.convertToMenuItem(), order: order)) {
+                                MenuItemCell(menuItem: favorite.convertToMenuItem())
+                            }
                         }
                         .onDelete { indexSet in
-                            viewModel.deleteItems(at: indexSet)
+                            for index in indexSet {
+                                let menuItem = favorites[index]
+                                PersistenceManager.shared.delete(menuItem)
+                            }
                         }
                     }
                     .listStyle(.plain)
                 }
                 .navigationTitle("Favorites ❤️")
+                .onAppear() {
+                    favorites.sortDescriptors = viewModel.sortTypes[0].descriptors
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Menu {
+                            ForEach(0..<viewModel.sortTypes.count, id: \.self) { index in
+                                let sortType = viewModel.sortTypes[index]
+                            Button(action: {
+                              favorites.sortDescriptors = sortType.descriptors
+                            }, label: {
+                              Text(sortType.name)
+                            })
+                          }
+                        }
+                        label: {
+                          Image(systemName: "line.3.horizontal.decrease.circle.fill")
+                        }
+                    }
+                }
             }
         }
         .background(
@@ -38,7 +69,7 @@ struct FavoritesView: View {
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritesView(viewModel: FavoritesViewModel())
+        FavoritesView(viewModel: FavoritesViewModel(), order: OrderViewModel())
     }
 }
 

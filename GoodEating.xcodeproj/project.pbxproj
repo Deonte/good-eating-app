@@ -10,6 +10,10 @@
 		FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */; };
 		FD39210B28FE3157004330DA /* MenuPlistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39210A28FE3157004330DA /* MenuPlistStore.swift */; };
 		FD39210E28FE3D20004330DA /* ImageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39210D28FE3D20004330DA /* ImageLoadingView.swift */; };
+		FD39211128FE598C004330DA /* FavoriteMenuItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD39210F28FE598C004330DA /* FavoriteMenuItem.xcdatamodeld */; };
+		FD39211528FE64ED004330DA /* FavoriteMenuItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39211328FE64ED004330DA /* FavoriteMenuItem+CoreDataClass.swift */; };
+		FD39211628FE64ED004330DA /* FavoriteMenuItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39211428FE64ED004330DA /* FavoriteMenuItem+CoreDataProperties.swift */; };
+		FD39211828FE6A29004330DA /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39211728FE6A29004330DA /* PersistenceManager.swift */; };
 		FD42312328FE083B0021909C /* FileManager+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42312228FE083B0021909C /* FileManager+ext.swift */; };
 		FD42312528FE09650021909C /* MenuJSONStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42312428FE09650021909C /* MenuJSONStore.swift */; };
 		FD5604AF28FD054B00FE0C7D /* MenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5604AE28FD054B00FE0C7D /* MenuResponse.swift */; };
@@ -36,6 +40,10 @@
 		FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		FD39210A28FE3157004330DA /* MenuPlistStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlistStore.swift; sourceTree = "<group>"; };
 		FD39210D28FE3D20004330DA /* ImageLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingView.swift; sourceTree = "<group>"; };
+		FD39211028FE598C004330DA /* FavoriteMenuItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteMenuItem.xcdatamodel; sourceTree = "<group>"; };
+		FD39211328FE64ED004330DA /* FavoriteMenuItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteMenuItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FD39211428FE64ED004330DA /* FavoriteMenuItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteMenuItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FD39211728FE6A29004330DA /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		FD42312228FE083B0021909C /* FileManager+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+ext.swift"; sourceTree = "<group>"; };
 		FD42312428FE09650021909C /* MenuJSONStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuJSONStore.swift; sourceTree = "<group>"; };
 		FD5604AE28FD054B00FE0C7D /* MenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuResponse.swift; sourceTree = "<group>"; };
@@ -71,10 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD39211228FE5A1C004330DA /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				FD39211328FE64ED004330DA /* FavoriteMenuItem+CoreDataClass.swift */,
+				FD39211428FE64ED004330DA /* FavoriteMenuItem+CoreDataProperties.swift */,
+				FD39210F28FE598C004330DA /* FavoriteMenuItem.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		FD5604B028FD213400FE0C7D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */,
+				FD39211728FE6A29004330DA /* PersistenceManager.swift */,
 				FD42312428FE09650021909C /* MenuJSONStore.swift */,
 				FD39210A28FE3157004330DA /* MenuPlistStore.swift */,
 			);
@@ -92,6 +111,8 @@
 		FD5F7BC528E24AB900CDABA4 /* Menu View */ = {
 			isa = PBXGroup;
 			children = (
+				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
+				FDA813E328CD924800EF83B9 /* DetailView.swift */,
 				FD9D7B1628B2B5C4006D7862 /* HomeView.swift */,
 				FD651E6428E25A0000429B40 /* MenuViewModel.swift */,
 			);
@@ -159,8 +180,6 @@
 			children = (
 				FDDC5F1328F3505700EDC17B /* App Tab View */,
 				FD5F7BC528E24AB900CDABA4 /* Menu View */,
-				FDA813E328CD924800EF83B9 /* DetailView.swift */,
-				FD9D7B1A28B2BE10006D7862 /* OnboardingView.swift */,
 				FD7C6A3528E1E18F002AACD0 /* Order View */,
 				FD7C6A3628E1E1B6002AACD0 /* Favorites View */,
 			);
@@ -200,6 +219,7 @@
 		FDDA8C7128C893B200EFC570 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FD39211228FE5A1C004330DA /* Core Data */,
 				FD5604AE28FD054B00FE0C7D /* MenuResponse.swift */,
 			);
 			path = Model;
@@ -286,7 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDDC5F1528F3507300EDC17B /* AppTabViewModel.swift in Sources */,
+				FD39211628FE64ED004330DA /* FavoriteMenuItem+CoreDataProperties.swift in Sources */,
 				FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */,
+				FD39211828FE6A29004330DA /* PersistenceManager.swift in Sources */,
 				FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */,
 				FD39210B28FE3157004330DA /* MenuPlistStore.swift in Sources */,
 				FD651E6528E25A0000429B40 /* MenuViewModel.swift in Sources */,
@@ -296,7 +318,9 @@
 				FD9D7B1B28B2BE10006D7862 /* OnboardingView.swift in Sources */,
 				FD39210E28FE3D20004330DA /* ImageLoadingView.swift in Sources */,
 				FDA813E428CD924800EF83B9 /* DetailView.swift in Sources */,
+				FD39211528FE64ED004330DA /* FavoriteMenuItem+CoreDataClass.swift in Sources */,
 				FD9D7B2028B2C00B006D7862 /* TextViews.swift in Sources */,
+				FD39211128FE598C004330DA /* FavoriteMenuItem.xcdatamodeld in Sources */,
 				FD42312528FE09650021909C /* MenuJSONStore.swift in Sources */,
 				FD7D7E8128F0BDDA00AC0DC7 /* NetworkManager.swift in Sources */,
 				FD9D7B1728B2B5C4006D7862 /* HomeView.swift in Sources */,
@@ -515,6 +539,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FD39210F28FE598C004330DA /* FavoriteMenuItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FD39211028FE598C004330DA /* FavoriteMenuItem.xcdatamodel */,
+			);
+			currentVersion = FD39211028FE598C004330DA /* FavoriteMenuItem.xcdatamodel */;
+			path = FavoriteMenuItem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FD9D7AF828B29DB7006D7862 /* Project object */;
 }

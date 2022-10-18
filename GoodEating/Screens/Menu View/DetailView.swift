@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Binding var menuItem: MenuItem
-    @ObservedObject var favorites: FavoritesViewModel
+    var menuItem: MenuItem
     @ObservedObject var order: OrderViewModel
 
+    @State private var isFavorite: Bool = false
+    
     var body: some View {
         ScrollView(.vertical) {
             VStack {
@@ -24,32 +25,41 @@ struct DetailView: View {
             .navigationViewStyle(.stack)
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(menuItem.name)
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button {
-//                        switch menuItem.isFavorite {
-//                        case true:
-//                            menuItem.isFavorite = false
-//                            favorites.remove(menuItem: menuItem)
-//                        case false:
-//                            menuItem.isFavorite = true
-//                            favorites.add(menuItem)
-//                        }
-//                    } label: {
-//                        Image(systemName: "heart.circle.fill")
-//                            .resizable()
-//                            .frame(width: 25, height: 25)
-//                            .foregroundColor(menuItem.isFavorite ? .red : .secondary)
-//                    }
-//                }
-//            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    addToFavoritesButton
+                }
+            }
+        }
+        .onAppear {
+           isFavorite = PersistenceManager.shared.checkIfFavorite(menuItem.id)
+        }
+    }
+}
+
+private extension DetailView {
+    var addToFavoritesButton: some View {
+        Button {
+            switch isFavorite {
+            case true:
+                isFavorite = false
+                PersistenceManager.shared.delete(menuItem)
+            case false:
+                isFavorite = true
+                PersistenceManager.shared.save(menuItem)
+            }
+        } label: {
+            Image(systemName: "heart.circle.fill")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(isFavorite ? .red : .secondary)
         }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(menuItem: .constant(MockMenu.data[2]), favorites: FavoritesViewModel(), order: OrderViewModel())
+        DetailView(menuItem: MockMenu.data[0], order: OrderViewModel())
     }
 }
 
