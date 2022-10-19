@@ -15,7 +15,8 @@ final class AppTabViewModel: ObservableObject {
     @Published var showSplash = true
     @Published var animationEnded = false
     
-    @Published var menu: [MenuItem] = []
+    @Published var menu: [MenuItem] = MenuJSONStore.shared.readData()
+
     
     func setTabBarAppearance() {
         let appearance = UITabBarAppearance()
