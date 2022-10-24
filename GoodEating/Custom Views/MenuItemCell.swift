@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MenuItemCell: View {
     var menuItem: MenuItem
@@ -64,7 +65,10 @@ private struct MenuItemCellImageView: View {
     
     var body: some View {
         ZStack {
-            ImageLoadingView(url: menuItem.img)
+            WebImage(url: URL(string: menuItem.img)!)
+                .resizable()
+                .placeholder(Image(systemName: "photo"))
+                .scaledToFill()
                 .frame(width: 80, height: 80)
                 .cornerRadius(10)
         }

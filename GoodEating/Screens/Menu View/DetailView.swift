@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct DetailView: View {
     var menuItem: MenuItem
@@ -110,31 +111,12 @@ private struct DetailImageView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            AsyncImage(url: URL(string: menuItem.img)!) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
-                        .clipped()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
-                        .clipped()
-                case .failure:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
-                        .clipped()
-                        .padding()
-                @unknown default:
-                    EmptyView()
-                        .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
-                }
-            }
+            
+            WebImage(url: URL(string: menuItem.img)!)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
+                .clipped()
             
             if menuItem.rate > 4 {
                 PopularView()
