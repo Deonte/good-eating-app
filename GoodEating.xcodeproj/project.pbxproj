@@ -33,12 +33,13 @@
 		FDDA8C7528C893E500EFC570 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */; };
 		FDDC5F1228F34D8000EDC17B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDC5F1128F34D8000EDC17B /* Launch Screen.storyboard */; };
 		FDDC5F1528F3507300EDC17B /* AppTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDC5F1428F3507300EDC17B /* AppTabViewModel.swift */; };
-		FDFF26622907660B00ABD41D /* DK_s_KitchenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF26612907660B00ABD41D /* DK_s_KitchenUITests.swift */; };
-		FDFF26642907660B00ABD41D /* DK_s_KitchenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF26632907660B00ABD41D /* DK_s_KitchenUITestsLaunchTests.swift */; };
+		FDFF268B290777AF00ABD41D /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF268A290777AF00ABD41D /* FileManagerTests.swift */; };
+		FDFF269329077DE200ABD41D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FDFF269229077DE200ABD41D /* SDWebImageSwiftUI */; };
+		FDFF269629077E6000ABD41D /* OrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF269529077E6000ABD41D /* OrderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FDFF26652907660B00ABD41D /* PBXContainerItemProxy */ = {
+		FDFF26842907772E00ABD41D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FD9D7AF828B29DB7006D7862 /* Project object */;
 			proxyType = 1;
@@ -75,9 +76,9 @@
 		FDDA8C7428C893E500EFC570 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		FDDC5F1128F34D8000EDC17B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FDDC5F1428F3507300EDC17B /* AppTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewModel.swift; sourceTree = "<group>"; };
-		FDFF265F2907660B00ABD41D /* DK's KitchenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DK's KitchenUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDFF26612907660B00ABD41D /* DK_s_KitchenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DK_s_KitchenUITests.swift; sourceTree = "<group>"; };
-		FDFF26632907660B00ABD41D /* DK_s_KitchenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DK_s_KitchenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FDFF26802907772E00ABD41D /* DK's KitchenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DK's KitchenTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDFF268A290777AF00ABD41D /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
+		FDFF269529077E6000ABD41D /* OrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +90,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDFF265C2907660B00ABD41D /* Frameworks */ = {
+		FDFF267D2907772E00ABD41D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFF269329077DE200ABD41D /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +163,9 @@
 			children = (
 				FD9D7B1428B2AFAD006D7862 /* README.md */,
 				FD9D7B0228B29DB7006D7862 /* GoodEating */,
-				FDFF26602907660B00ABD41D /* DK's KitchenUITests */,
+				FDFF26812907772E00ABD41D /* DK's KitchenTests */,
 				FD9D7B0128B29DB7006D7862 /* Products */,
+				FDFF269129077DE200ABD41D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */,
-				FDFF265F2907660B00ABD41D /* DK's KitchenUITests.xctest */,
+				FDFF26802907772E00ABD41D /* DK's KitchenTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,13 +257,36 @@
 			path = "App Tab View";
 			sourceTree = "<group>";
 		};
-		FDFF26602907660B00ABD41D /* DK's KitchenUITests */ = {
+		FDFF26812907772E00ABD41D /* DK's KitchenTests */ = {
 			isa = PBXGroup;
 			children = (
-				FDFF26612907660B00ABD41D /* DK_s_KitchenUITests.swift */,
-				FDFF26632907660B00ABD41D /* DK_s_KitchenUITestsLaunchTests.swift */,
+				FDFF269429077E4100ABD41D /* Orders */,
+				FDFF26892907777900ABD41D /* FileManager */,
 			);
-			path = "DK's KitchenUITests";
+			path = "DK's KitchenTests";
+			sourceTree = "<group>";
+		};
+		FDFF26892907777900ABD41D /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF268A290777AF00ABD41D /* FileManagerTests.swift */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
+		FDFF269129077DE200ABD41D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDFF269429077E4100ABD41D /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF269529077E6000ABD41D /* OrderTests.swift */,
+			);
+			path = Orders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,23 +312,26 @@
 			productReference = FD9D7B0028B29DB7006D7862 /* DK's Kitchen.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FDFF265E2907660B00ABD41D /* DK's KitchenUITests */ = {
+		FDFF267F2907772E00ABD41D /* DK's KitchenTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FDFF26692907660B00ABD41D /* Build configuration list for PBXNativeTarget "DK's KitchenUITests" */;
+			buildConfigurationList = FDFF26862907772E00ABD41D /* Build configuration list for PBXNativeTarget "DK's KitchenTests" */;
 			buildPhases = (
-				FDFF265B2907660B00ABD41D /* Sources */,
-				FDFF265C2907660B00ABD41D /* Frameworks */,
-				FDFF265D2907660B00ABD41D /* Resources */,
+				FDFF267C2907772E00ABD41D /* Sources */,
+				FDFF267D2907772E00ABD41D /* Frameworks */,
+				FDFF267E2907772E00ABD41D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FDFF26662907660B00ABD41D /* PBXTargetDependency */,
+				FDFF26852907772E00ABD41D /* PBXTargetDependency */,
 			);
-			name = "DK's KitchenUITests";
-			productName = "DK's KitchenUITests";
-			productReference = FDFF265F2907660B00ABD41D /* DK's KitchenUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = "DK's KitchenTests";
+			packageProductDependencies = (
+				FDFF269229077DE200ABD41D /* SDWebImageSwiftUI */,
+			);
+			productName = "DK's KitchenTests";
+			productReference = FDFF26802907772E00ABD41D /* DK's KitchenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -317,7 +346,7 @@
 					FD9D7AFF28B29DB7006D7862 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					FDFF265E2907660B00ABD41D = {
+					FDFF267F2907772E00ABD41D = {
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = FD9D7AFF28B29DB7006D7862;
 					};
@@ -340,7 +369,7 @@
 			projectRoot = "";
 			targets = (
 				FD9D7AFF28B29DB7006D7862 /* GoodEating */,
-				FDFF265E2907660B00ABD41D /* DK's KitchenUITests */,
+				FDFF267F2907772E00ABD41D /* DK's KitchenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -356,7 +385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDFF265D2907660B00ABD41D /* Resources */ = {
+		FDFF267E2907772E00ABD41D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,22 +424,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDFF265B2907660B00ABD41D /* Sources */ = {
+		FDFF267C2907772E00ABD41D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDFF26642907660B00ABD41D /* DK_s_KitchenUITestsLaunchTests.swift in Sources */,
-				FDFF26622907660B00ABD41D /* DK_s_KitchenUITests.swift in Sources */,
+				FDFF269629077E6000ABD41D /* OrderTests.swift in Sources */,
+				FDFF268B290777AF00ABD41D /* FileManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FDFF26662907660B00ABD41D /* PBXTargetDependency */ = {
+		FDFF26852907772E00ABD41D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FD9D7AFF28B29DB7006D7862 /* GoodEating */;
-			targetProxy = FDFF26652907660B00ABD41D /* PBXContainerItemProxy */;
+			targetProxy = FDFF26842907772E00ABD41D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -451,6 +480,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -511,6 +541,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -539,9 +570,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GoodEating/Preview Content\"";
 				DEVELOPMENT_TEAM = WD9RGBDJX8;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodEating/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -573,9 +604,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GoodEating/Preview Content\"";
 				DEVELOPMENT_TEAM = WD9RGBDJX8;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodEating/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -597,9 +628,10 @@
 			};
 			name = Release;
 		};
-		FDFF26672907660B00ABD41D /* Debug */ = {
+		FDFF26872907772E00ABD41D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -607,18 +639,19 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.compilery.DK-s-KitchenUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.compilery.DK-s-KitchenTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GoodEating;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DK's Kitchen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DK's Kitchen";
 			};
 			name = Debug;
 		};
-		FDFF26682907660B00ABD41D /* Release */ = {
+		FDFF26882907772E00ABD41D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -626,12 +659,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.compilery.DK-s-KitchenUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.compilery.DK-s-KitchenTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GoodEating;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DK's Kitchen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DK's Kitchen";
 			};
 			name = Release;
 		};
@@ -656,11 +689,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FDFF26692907660B00ABD41D /* Build configuration list for PBXNativeTarget "DK's KitchenUITests" */ = {
+		FDFF26862907772E00ABD41D /* Build configuration list for PBXNativeTarget "DK's KitchenTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FDFF26672907660B00ABD41D /* Debug */,
-				FDFF26682907660B00ABD41D /* Release */,
+				FDFF26872907772E00ABD41D /* Debug */,
+				FDFF26882907772E00ABD41D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -680,6 +713,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		FD19E5A22905F8EA00A64A71 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD19E5A12905F8EA00A64A71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		FDFF269229077DE200ABD41D /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FD19E5A12905F8EA00A64A71 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;

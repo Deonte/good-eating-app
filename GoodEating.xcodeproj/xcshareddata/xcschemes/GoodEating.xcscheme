@@ -26,7 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "FD9D7AFF28B29DB7006D7862"
+            BuildableName = "DK&apos;s Kitchen.app"
+            BlueprintName = "GoodEating"
+            ReferencedContainer = "container:GoodEating.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
@@ -36,6 +47,17 @@
                BlueprintIdentifier = "FDFF265E2907660B00ABD41D"
                BuildableName = "DK&apos;s KitchenUITests.xctest"
                BlueprintName = "DK&apos;s KitchenUITests"
+               ReferencedContainer = "container:GoodEating.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FDFF266D2907668500ABD41D"
+               BuildableName = "DK&apos;s KitchenTests.xctest"
+               BlueprintName = "DK&apos;s KitchenTests"
                ReferencedContainer = "container:GoodEating.xcodeproj">
             </BuildableReference>
          </TestableReference>
