@@ -36,6 +36,10 @@
 		FDFF268B290777AF00ABD41D /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF268A290777AF00ABD41D /* FileManagerTests.swift */; };
 		FDFF269329077DE200ABD41D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FDFF269229077DE200ABD41D /* SDWebImageSwiftUI */; };
 		FDFF269629077E6000ABD41D /* OrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF269529077E6000ABD41D /* OrderTests.swift */; };
+		FDFF2699290782F100ABD41D /* MenuJSONStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF2698290782F100ABD41D /* MenuJSONStoreTests.swift */; };
+		FDFF269C290787BD00ABD41D /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF269B290787BD00ABD41D /* NetworkManagerTests.swift */; };
+		FDFF269F29078CBC00ABD41D /* AppTabViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF269E29078CBC00ABD41D /* AppTabViewModelTests.swift */; };
+		FDFF26A22907925900ABD41D /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF26A12907925900ABD41D /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		FDFF26802907772E00ABD41D /* DK's KitchenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DK's KitchenTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFF268A290777AF00ABD41D /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
 		FDFF269529077E6000ABD41D /* OrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTests.swift; sourceTree = "<group>"; };
+		FDFF2698290782F100ABD41D /* MenuJSONStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuJSONStoreTests.swift; sourceTree = "<group>"; };
+		FDFF269B290787BD00ABD41D /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		FDFF269E29078CBC00ABD41D /* AppTabViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewModelTests.swift; sourceTree = "<group>"; };
+		FDFF26A12907925900ABD41D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +268,10 @@
 		FDFF26812907772E00ABD41D /* DK's KitchenTests */ = {
 			isa = PBXGroup;
 			children = (
+				FDFF26A02907924500ABD41D /* Persistence Manager */,
+				FDFF269D29078C8800ABD41D /* App Tab View Model */,
+				FDFF269A290787A900ABD41D /* Network Manager */,
+				FDFF2697290782D400ABD41D /* MenuJSONStore */,
 				FDFF269429077E4100ABD41D /* Orders */,
 				FDFF26892907777900ABD41D /* FileManager */,
 			);
@@ -287,6 +299,38 @@
 				FDFF269529077E6000ABD41D /* OrderTests.swift */,
 			);
 			path = Orders;
+			sourceTree = "<group>";
+		};
+		FDFF2697290782D400ABD41D /* MenuJSONStore */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF2698290782F100ABD41D /* MenuJSONStoreTests.swift */,
+			);
+			path = MenuJSONStore;
+			sourceTree = "<group>";
+		};
+		FDFF269A290787A900ABD41D /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF269B290787BD00ABD41D /* NetworkManagerTests.swift */,
+			);
+			path = "Network Manager";
+			sourceTree = "<group>";
+		};
+		FDFF269D29078C8800ABD41D /* App Tab View Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF269E29078CBC00ABD41D /* AppTabViewModelTests.swift */,
+			);
+			path = "App Tab View Model";
+			sourceTree = "<group>";
+		};
+		FDFF26A02907924500ABD41D /* Persistence Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF26A12907925900ABD41D /* PersistenceManager.swift */,
+			);
+			path = "Persistence Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +472,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFF269C290787BD00ABD41D /* NetworkManagerTests.swift in Sources */,
+				FDFF2699290782F100ABD41D /* MenuJSONStoreTests.swift in Sources */,
 				FDFF269629077E6000ABD41D /* OrderTests.swift in Sources */,
+				FDFF26A22907925900ABD41D /* PersistenceManager.swift in Sources */,
+				FDFF269F29078CBC00ABD41D /* AppTabViewModelTests.swift in Sources */,
 				FDFF268B290777AF00ABD41D /* FileManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
