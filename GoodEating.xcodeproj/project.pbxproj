@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */; };
 		FD19E5A32905F8EA00A64A71 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FD19E5A22905F8EA00A64A71 /* SDWebImageSwiftUI */; };
-		FD39210B28FE3157004330DA /* MenuPlistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39210A28FE3157004330DA /* MenuPlistStore.swift */; };
 		FD39211128FE598C004330DA /* FavoriteMenuItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD39210F28FE598C004330DA /* FavoriteMenuItem.xcdatamodeld */; };
 		FD39211528FE64ED004330DA /* FavoriteMenuItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39211328FE64ED004330DA /* FavoriteMenuItem+CoreDataClass.swift */; };
 		FD39211628FE64ED004330DA /* FavoriteMenuItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39211428FE64ED004330DA /* FavoriteMenuItem+CoreDataProperties.swift */; };
@@ -54,7 +53,6 @@
 
 /* Begin PBXFileReference section */
 		FD0A57C728D7D259000347EA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		FD39210A28FE3157004330DA /* MenuPlistStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlistStore.swift; sourceTree = "<group>"; };
 		FD39211028FE598C004330DA /* FavoriteMenuItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteMenuItem.xcdatamodel; sourceTree = "<group>"; };
 		FD39211328FE64ED004330DA /* FavoriteMenuItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteMenuItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FD39211428FE64ED004330DA /* FavoriteMenuItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteMenuItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				FD7D7E8028F0BDDA00AC0DC7 /* NetworkManager.swift */,
 				FD39211728FE6A29004330DA /* PersistenceManager.swift */,
 				FD42312428FE09650021909C /* MenuJSONStore.swift */,
-				FD39210A28FE3157004330DA /* MenuPlistStore.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -448,7 +445,6 @@
 				FD0A57C828D7D259000347EA /* FavoritesViewModel.swift in Sources */,
 				FD39211828FE6A29004330DA /* PersistenceManager.swift in Sources */,
 				FD9D7B2228B2C30E006D7862 /* Constants.swift in Sources */,
-				FD39210B28FE3157004330DA /* MenuPlistStore.swift in Sources */,
 				FDBD3EFC28D797D8008362A6 /* FavoritesView.swift in Sources */,
 				FDBD3EFA28D79621008362A6 /* OrderView.swift in Sources */,
 				FD5604AF28FD054B00FE0C7D /* MenuResponse.swift in Sources */,

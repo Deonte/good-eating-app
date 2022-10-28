@@ -17,6 +17,10 @@ final class AppTabViewModel: ObservableObject {
     
     @Published var menu: [MenuItem] = MenuJSONStore.shared.readData()
 
+    @Published var isDisplayingError = false
+    @Published var lastErrorMessage = "" {
+      didSet { isDisplayingError = true }
+    }
     
     func setTabBarAppearance() {
         let appearance = UITabBarAppearance()
@@ -27,14 +31,20 @@ final class AppTabViewModel: ObservableObject {
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }
     
-    func animateSplashScreen() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
-            animate.toggle()
+    func animateSplashScreen() async throws {
+        Task {
+            try await Task.sleep(nanoseconds: 300_000_000)
+            await  MainActor.run {
+                animate.toggle()
+            }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
-            showSplash.toggle()
-            animationEnded.toggle()
+        Task {
+            try await Task.sleep(nanoseconds: 2_000_000_000)
+            await MainActor.run {
+                showSplash.toggle()
+                animationEnded.toggle()
+            }
         }
     }
     
@@ -46,7 +56,7 @@ final class AppTabViewModel: ObservableObject {
                 menu = networkManager.menu
             }
         } catch let error {
-            print(error)
+            await MainActor.run { lastErrorMessage = error.localizedDescription }
         }
     }
     
@@ -58,21 +68,8 @@ final class AppTabViewModel: ObservableObject {
                 menu = MenuJSONStore.shared.readData()
             }
         } catch let error {
-            print(error)
+            await MainActor.run { lastErrorMessage = error.localizedDescription }
         }
     }
-    
-    func downloadDataAndLoadPlist() async {
-        guard menu.isEmpty else { return }
-        do {
-            try await networkManager.downloadMenuAndSavePlist()
-            await MainActor.run {
-                menu = MenuPlistStore.shared.readData()
-            }
-        } catch let error {
-            print(error)
-        }
-    }
-    
     
 }

@@ -35,7 +35,8 @@ final class MenuJSONStore {
             
             let data = try Data(contentsOf: fileURL)
             let menu = try JSONDecoder().decode([MenuItem].self, from: data)
-            
+            print(fileURL)
+
             print("Succesfully Decoded JSON!")
             return menu
         } catch {

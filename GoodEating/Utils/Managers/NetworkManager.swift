@@ -59,21 +59,6 @@ class NetworkManager: ObservableObject {
         MenuJSONStore.shared.write(menuResponse)
     }
     
-    func downloadMenuAndSavePlist() async throws {
-        let (data, response) = try await session.data(from: self.url)
-        
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw NetworkError.invalidResponse
-        }
-                
-        guard let menuResponse = try? decoder.decode([MenuItem].self, from: data) else {
-            throw NetworkError.responseDecodingFailed
-        }
-        
-        // Save Menu to Property List
-        MenuPlistStore.shared.write(menuResponse)
-    }
-    
 }
 
 

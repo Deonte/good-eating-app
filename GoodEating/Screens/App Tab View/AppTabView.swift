@@ -65,21 +65,26 @@ struct AppTabView: View {
             .scaleEffect(viewModel.showSplash ? 1 : 5)
             .animation(.easeIn(duration: 0.4), value: viewModel.showSplash)
         }
+        .alert("Error", isPresented: $viewModel.isDisplayingError, actions: {
+          Button("Close", role: .cancel) { }
+        }, message: {
+            Text(viewModel.lastErrorMessage)
+        })
         .onAppear {
             viewModel.setTabBarAppearance()
-            viewModel.animateSplashScreen()
-            
+        }
+        .task {
             URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
-
-            Task {
+            do {
+                try await viewModel.animateSplashScreen()
                 // Download Data and Display menu from NetworkManager
-//                await viewModel.downloadData()
+                 await viewModel.downloadData()
                 
                 // Download Data using Network Manager and Display menu from JSON file.
-                await viewModel.downloadDataAndLoadJSON()
+                //await viewModel.downloadDataAndLoadJSON()
                 
-                // Download Data using Network Manager and Display menu from PList file.
-//                await viewModel.downloadDataAndLoadPlist()
+            } catch {
+                
             }
         }
     }
