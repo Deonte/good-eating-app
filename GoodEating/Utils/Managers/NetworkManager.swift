@@ -16,10 +16,11 @@ class NetworkManager: ObservableObject {
         case invalidURL
         case failedToDownloadImage
     }
-    
     private let session: URLSession
     private let sessionConfiguration: URLSessionConfiguration
-    private let url = URL(string: "https://ig-food-menus.herokuapp.com/best-foods")!
+    // Changed URL do to server going down.
+    // private let url = URL(string: "https://ig-food-menus.herokuapp.com/best-foods")!
+    private let url = URL(string: "https://www.compilery.io/DK'sKitchen/menu.json")!
     private let decoder = JSONDecoder()
     
     init() {

@@ -8,30 +8,28 @@
 import SwiftUI
 
 struct AppTabView: View {
-    @ObservedObject private var viewModel = AppTabViewModel()
-    
+    @StateObject private var viewModel = AppTabViewModel()
+
     var body: some View {
         ZStack {
             ZStack {
                 TabView {
                     HomeView(menuItems: $viewModel.menu, order: viewModel.order)
                         .tabItem {
-                            TabLabel(imageName: "menucard.fill",
-                                     label: "Menu")
+                            Label("Menu", systemImage: "menucard.fill")
                         }
                     
                     FavoritesView(order: viewModel.order)
                         .tabItem {
-                            TabLabel(imageName: "heart.fill",
-                                     label: "Favorites")
+                            Label("Favorites", systemImage: "heart.fill")
                         }
-                    
+
                     OrderView(order: viewModel.order)
                         .tabItem {
-                            TabLabel(imageName: "cart",
-                                     label: "Checkout")
+                            Label("Checkout", systemImage: "cart")
                         }
                         .badge(viewModel.order.items.count)
+                    
                 }
                 .scaleEffect(viewModel.animationEnded ? 1 : 5)
                 .animation(.spring(response: 0.4,
@@ -75,17 +73,11 @@ struct AppTabView: View {
         }
         .task {
             URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
-            do {
-                try await viewModel.animateSplashScreen()
-                // Download Data and Display menu from NetworkManager
-                 await viewModel.downloadData()
-                
-                // Download Data using Network Manager and Display menu from JSON file.
-                //await viewModel.downloadDataAndLoadJSON()
-                
-            } catch {
-                
-            }
+            await viewModel.animateSplashScreen()
+            // Download Data and Display menu from NetworkManager
+            await viewModel.downloadData()
+            // Download Data using Network Manager and Display menu from JSON file.
+//            await viewModel.downloadDataAndLoadJSON()
         }
     }
 }
@@ -93,18 +85,6 @@ struct AppTabView: View {
 struct AppTabView_Previews: PreviewProvider {
     static var previews: some View {
         AppTabView()
-    }
-}
-
-private struct TabLabel: View {
-    let imageName: String
-    let label: String
-    
-    var body: some View {
-        HStack {
-            Image(systemName: imageName)
-            Text(label)
-        }
     }
 }
 

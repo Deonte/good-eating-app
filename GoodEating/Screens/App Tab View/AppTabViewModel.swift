@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Network
 
 final class AppTabViewModel: ObservableObject {
     @Published var order = OrderViewModel()
@@ -22,6 +23,10 @@ final class AppTabViewModel: ObservableObject {
       didSet { isDisplayingError = true }
     }
     
+    init() {
+        monitorNetwork()
+    }
+    
     func setTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
@@ -31,10 +36,10 @@ final class AppTabViewModel: ObservableObject {
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }
     
-    func animateSplashScreen() async throws {
+    func animateSplashScreen() async {
         Task {
             try await Task.sleep(nanoseconds: 300_000_000)
-            await  MainActor.run {
+            await MainActor.run {
                 animate.toggle()
             }
         }
@@ -69,6 +74,28 @@ final class AppTabViewModel: ObservableObject {
             }
         } catch let error {
             await MainActor.run { lastErrorMessage = error.localizedDescription }
+        }
+    }
+    
+    func monitorNetwork() {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "Network")
+        monitor.start(queue: queue)
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                guard self.menu.isEmpty else { return }
+                self.isDisplayingError = false
+                Task {
+                    await self.downloadData()
+                }
+            } else {
+                Task {
+                    await MainActor.run {
+                        self.lastErrorMessage = "Could not connect to server. Please check internet connection."
+                    }
+                }
+            }
         }
     }
     
