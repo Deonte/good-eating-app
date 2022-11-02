@@ -14,7 +14,7 @@ struct AppTabView: View {
         ZStack {
             ZStack {
                 TabView {
-                    HomeView(menuItems: $viewModel.menu, order: viewModel.order)
+                    HomeView(order: viewModel.order)
                         .tabItem {
                             Label("Menu", systemImage: "menucard.fill")
                         }
@@ -74,10 +74,6 @@ struct AppTabView: View {
         .task {
             URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
             await viewModel.animateSplashScreen()
-            // Download Data and Display menu from NetworkManager
-            await viewModel.downloadData()
-            // Download Data using Network Manager and Display menu from JSON file.
-//            await viewModel.downloadDataAndLoadJSON()
         }
     }
 }

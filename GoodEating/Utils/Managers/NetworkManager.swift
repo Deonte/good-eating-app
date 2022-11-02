@@ -19,9 +19,9 @@ class NetworkManager: ObservableObject {
     private let session: URLSession
     private let sessionConfiguration: URLSessionConfiguration
     // Changed URL do to server going down.
-    // private let url = URL(string: "https://ig-food-menus.herokuapp.com/best-foods")!
-    private let url = URL(string: "https://www.compilery.io/DK'sKitchen/menu.json")!
+    //private let url = URL(string: "https://www.compilery.io/DK'sKitchen/menu.json")!
     private let decoder = JSONDecoder()
+//    private let category: CourseCategory
     
     init() {
         self.sessionConfiguration = URLSessionConfiguration.default
@@ -29,8 +29,8 @@ class NetworkManager: ObservableObject {
         self.decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
-    func downloadMenu() async throws {
-        let (data, response) = try await session.data(from: self.url)
+    func downloadMenu(category: CourseCategory) async throws {
+        let (data, response) = try await session.data(from: category.categoryURL())
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw NetworkError.invalidResponse
@@ -45,20 +45,20 @@ class NetworkManager: ObservableObject {
         }
     }
     
-    func downloadMenuAndSaveToJSON() async throws {
-        let (data, response) = try await session.data(from: self.url)
-        
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw NetworkError.invalidResponse
-        }
-                
-        guard let menuResponse = try? decoder.decode([MenuItem].self, from: data) else {
-            throw NetworkError.responseDecodingFailed
-        }
-        
-        // Save Menu to Menu Store
-        MenuJSONStore.shared.write(menuResponse)
-    }
+//    func downloadMenuAndSaveToJSON() async throws {
+//        let (data, response) = try await session.data(from: self.url)
+//        
+//        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+//            throw NetworkError.invalidResponse
+//        }
+//                
+//        guard let menuResponse = try? decoder.decode([MenuItem].self, from: data) else {
+//            throw NetworkError.responseDecodingFailed
+//        }
+//        
+//        // Save Menu to Menu Store
+//        MenuJSONStore.shared.write(menuResponse)
+//    }
     
 }
 

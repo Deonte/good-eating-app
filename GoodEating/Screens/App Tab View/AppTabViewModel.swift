@@ -8,6 +8,7 @@
 import SwiftUI
 import Network
 
+@MainActor
 final class AppTabViewModel: ObservableObject {
     @Published var order = OrderViewModel()
     @Published var networkManager = NetworkManager()
@@ -39,43 +40,48 @@ final class AppTabViewModel: ObservableObject {
     func animateSplashScreen() async {
         Task {
             try await Task.sleep(nanoseconds: 300_000_000)
-            await MainActor.run {
+//            await MainActor.run {
                 animate.toggle()
-            }
+//            }
         }
         
         Task {
             try await Task.sleep(nanoseconds: 2_000_000_000)
-            await MainActor.run {
+//            await MainActor.run {
                 showSplash.toggle()
                 animationEnded.toggle()
-            }
+//            }
         }
     }
     
-    func downloadData() async {
-        guard menu.isEmpty else { return }
-        do {
-            try await networkManager.downloadMenu()
-            await MainActor.run {
-                menu = networkManager.menu
-            }
-        } catch let error {
-            await MainActor.run { lastErrorMessage = error.localizedDescription }
-        }
-    }
+//    func downloadData() async {
+//        guard menu.isEmpty else { return }
+//        do {
+//            try await networkManager.downloadMenu(category: )
+////            await MainActor.run {
+//                menu = networkManager.menu
+////            }
+//        } catch let error {
+//            await MainActor.run {
+//                lastErrorMessage = error.localizedDescription
+//            }
+//        }
+//    }
     
-    func downloadDataAndLoadJSON() async {
-        guard menu.isEmpty else { return }
-        do {
-            try await networkManager.downloadMenuAndSaveToJSON()
-            await MainActor.run {
-                menu = MenuJSONStore.shared.readData()
-            }
-        } catch let error {
-            await MainActor.run { lastErrorMessage = error.localizedDescription }
-        }
-    }
+//    func downloadDataAndLoadJSON() async {
+//        guard menu.isEmpty else { return }
+//        do {
+//            try await networkManager.downloadMenuAndSaveToJSON()
+////            await MainActor.run {
+//                menu = MenuJSONStore.shared.readData()
+////            }
+//        } catch let error {
+////            await MainActor.run {
+//                lastErrorMessage = error.localizedDescription
+//
+////            }
+//        }
+//    }
     
     func monitorNetwork() {
         let monitor = NWPathMonitor()
@@ -85,15 +91,15 @@ final class AppTabViewModel: ObservableObject {
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 guard self.menu.isEmpty else { return }
-                self.isDisplayingError = false
                 Task {
-                    await self.downloadData()
+                    self.isDisplayingError = false
+                   // await self.downloadData()
                 }
             } else {
                 Task {
-                    await MainActor.run {
+                   // await MainActor.run {
                         self.lastErrorMessage = "Could not connect to server. Please check internet connection."
-                    }
+                    //}
                 }
             }
         }
