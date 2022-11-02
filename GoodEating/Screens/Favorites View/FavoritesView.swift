@@ -12,7 +12,11 @@ struct FavoritesView: View {
     @ObservedObject var order: OrderViewModel
 
     @FetchRequest(
-        sortDescriptors: [],
+        sortDescriptors: [
+            SortDescriptor(\FavoriteMenuItem.name, order: .forward),
+            SortDescriptor(\FavoriteMenuItem.rate, order: .reverse),
+            SortDescriptor(\FavoriteMenuItem.price, order: .reverse)
+        ],
       animation: .default)
     var favorites: FetchedResults<FavoriteMenuItem>
     

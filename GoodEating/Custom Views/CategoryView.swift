@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CategoryView: View {
     let category: CourseCategory
- 
     var isSelected: Bool
     
     var body: some View {
@@ -23,7 +22,7 @@ struct CategoryView: View {
                 Circle()
                     .frame(width: isSelected ? 60 : 0,
                            height: isSelected ? 60 : 0)
-                    .foregroundColor(isSelected ? .orange.opacity(0.4) : .clear)
+                    .foregroundColor(isSelected ? .orange : .clear)
                 
                 Text(category.categoryImage)
                     .font(.system(size: 40))

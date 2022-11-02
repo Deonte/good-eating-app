@@ -27,6 +27,7 @@ struct MenuItemCell: View {
                     .foregroundColor(.secondary)
                     .fontWeight(.semibold)
             }
+            
             .onAppear {
                 isFavorite = PersistenceManager.shared.checkIfFavorite(menuItem.id)
             }

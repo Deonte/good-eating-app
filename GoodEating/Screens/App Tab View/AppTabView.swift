@@ -14,7 +14,7 @@ struct AppTabView: View {
         ZStack {
             ZStack {
                 TabView {
-                    HomeView(order: viewModel.order)
+                    MenuView(order: viewModel.order)
                         .tabItem {
                             Label("Menu", systemImage: "menucard.fill")
                         }
@@ -37,7 +37,6 @@ struct AppTabView: View {
                                    blendDuration: 0.5),
                            value: viewModel.animationEnded)
             }
-            
             
             ZStack {
                 Color(uiColor: .secondarySystemBackground)
@@ -72,7 +71,7 @@ struct AppTabView: View {
             viewModel.setTabBarAppearance()
         }
         .task {
-            URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
+//            URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
             await viewModel.animateSplashScreen()
         }
     }
