@@ -18,8 +18,8 @@ struct MenuView: View {
             } else {
                 VStack {
                     HeaderView(username: "Deonté", isOnboarding: $viewModel.isOnboarding)
+                    CategorySelectionView(category: $viewModel.category)
                     VStack {
-                        CategorySelectionView(category: $viewModel.category)
                         list
                     }
                 }
@@ -48,8 +48,6 @@ struct MenuView_Previews: PreviewProvider {
         MenuView(order: OrderViewModel())
     }
 }
-
-
 
 extension MenuView {
     var emptyView: some View {

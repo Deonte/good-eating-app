@@ -22,6 +22,7 @@ struct DetailView: View {
                 
                 DescriptionView(menuItem: menuItem, order: order)
             }
+            .frame(maxWidth: Constants.ScreenSize.width)
             .padding(.bottom)
             .navigationViewStyle(.stack)
             .navigationBarTitleDisplayMode(.inline)
