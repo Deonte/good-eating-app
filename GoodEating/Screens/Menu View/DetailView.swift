@@ -115,6 +115,11 @@ private struct DetailImageView: View {
             
             WebImage(url: URL(string: menuItem.img)!)
                 .resizable()
+                .placeholder(content: {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .padding()
+                })
                 .aspectRatio(contentMode: .fill)
                 .frame(height: Constants.ScreenSize.height > 667 ? 380 : 250)
                 .clipped()

@@ -68,7 +68,11 @@ private struct MenuItemCellImageView: View {
         ZStack {
             WebImage(url: URL(string: menuItem.img)!)
                 .resizable()
-                .placeholder(Image(systemName: "photo"))
+                .placeholder(content: {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .frame(width: 80, height: 80)
+                })
                 .scaledToFill()
                 .frame(width: 80, height: 80)
                 .cornerRadius(10)
