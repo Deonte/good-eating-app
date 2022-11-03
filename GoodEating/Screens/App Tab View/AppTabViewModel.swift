@@ -10,7 +10,6 @@ import Network
 
 @MainActor
 final class AppTabViewModel: ObservableObject {
-    @Published var order = OrderViewModel()
     @Published var animate = false
     @Published var showSplash = true
     @Published var animationEnded = false
@@ -18,10 +17,6 @@ final class AppTabViewModel: ObservableObject {
     @Published var lastErrorMessage = "" {
       didSet { isDisplayingError = true }
     }
-    
-//    init() {
-//        monitorNetwork()
-//    }
     
     func setTabBarAppearance() {
         let appearance = UITabBarAppearance()
@@ -44,27 +39,5 @@ final class AppTabViewModel: ObservableObject {
                 animationEnded.toggle()
         }
     }
-
-//    func monitorNetwork() {
-//        let monitor = NWPathMonitor()
-//        let queue = DispatchQueue(label: "Network")
-//        monitor.start(queue: queue)
-//
-//        monitor.pathUpdateHandler = { path in
-//            if path.status == .satisfied {
-//                guard self.menu.isEmpty else { return }
-//                Task {
-//                    self.isDisplayingError = false
-//                   // await self.downloadData()
-//                }
-//            } else {
-//                Task {
-//                   // await MainActor.run {
-//                        self.lastErrorMessage = "Could not connect to server. Please check internet connection."
-//                    //}
-//                }
-//            }
-//        }
-//    }
     
 }

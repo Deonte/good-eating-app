@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavoritesView: View {
     @ObservedObject var viewModel = FavoritesViewModel()
-    @ObservedObject var order: OrderViewModel
+    @EnvironmentObject var order: OrderViewModel
 
     @FetchRequest(
         sortDescriptors: [
@@ -73,7 +73,7 @@ struct FavoritesView: View {
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritesView(viewModel: FavoritesViewModel(), order: OrderViewModel())
+        FavoritesView()
     }
 }
 

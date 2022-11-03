@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MenuView: View {
-    @ObservedObject var order: OrderViewModel
     @ObservedObject private var viewModel = MenuViewModel()
-    
+    @EnvironmentObject var order: OrderViewModel
+
     var body: some View {
         NavigationView {
             if viewModel.getSelectedMenu().isEmpty {
@@ -45,7 +45,7 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(order: OrderViewModel())
+        MenuView()
     }
 }
 

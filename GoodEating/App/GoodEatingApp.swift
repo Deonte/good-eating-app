@@ -15,6 +15,7 @@ struct GoodEatingApp: App {
         WindowGroup {
             AppTabView()
                 .environment(\.managedObjectContext, persistenceManager.container.viewContext)
+                .environmentObject(OrderViewModel())
         }
     }
 }

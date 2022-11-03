@@ -8,34 +8,30 @@
 import SwiftUI
 
 struct AppTabView: View {
-    @StateObject private var viewModel = AppTabViewModel()
+    @ObservedObject private var viewModel = AppTabViewModel()
+    @EnvironmentObject var order: OrderViewModel
 
     var body: some View {
         ZStack {
             ZStack {
                 TabView {
-                    MenuView(order: viewModel.order)
+                    MenuView()
                         .tabItem {
                             Label("Menu", systemImage: "menucard.fill")
                         }
                     
-                    FavoritesView(order: viewModel.order)
+                    FavoritesView()
                         .tabItem {
                             Label("Favorites", systemImage: "heart.fill")
                         }
 
-                    OrderView(order: viewModel.order)
+                    OrderView()
                         .tabItem {
                             Label("Checkout", systemImage: "cart")
                         }
-                        .badge(viewModel.order.items.count)
-                    
+                        .badge(order.items.count)
                 }
                 .scaleEffect(viewModel.animationEnded ? 1 : 5)
-                .animation(.spring(response: 0.4,
-                                   dampingFraction: 0.7,
-                                   blendDuration: 0.5),
-                           value: viewModel.animationEnded)
             }
             
             ZStack {
@@ -71,7 +67,7 @@ struct AppTabView: View {
             viewModel.setTabBarAppearance()
         }
         .task {
-//            URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
+            URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
             await viewModel.animateSplashScreen()
         }
     }

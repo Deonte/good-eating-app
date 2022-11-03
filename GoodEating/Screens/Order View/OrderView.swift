@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct OrderView: View {
-    @ObservedObject var order: OrderViewModel
+    @EnvironmentObject var viewModel: OrderViewModel
 
     var body: some View {
         NavigationView {
-            if order.items.isEmpty {
+            if viewModel.items.isEmpty {
                 EmptyStateView(emoji: "🧾",
                                text: "You haven't selected anything just yet. Check out the menu, you might find something you like.")
                     .navigationTitle("Order 🧾")
@@ -20,11 +20,11 @@ struct OrderView: View {
                 VStack {
                     VStack {
                         List {
-                            ForEach(order.items) { item in
+                            ForEach(viewModel.items) { item in
                                 MenuItemCell(menuItem: item)
                             }
                             .onDelete { indexSet in
-                                order.deleteItems(at: indexSet)
+                                viewModel.deleteItems(at: indexSet)
                             }
                         }
                         .listStyle(.plain)
@@ -34,14 +34,19 @@ struct OrderView: View {
                     Spacer()
                     
                     Button {
-                        print("order placed")
+                        viewModel.placeOrder()
                     } label: {
-                        OrderButton(order: order)
+                        OrderButton(order: viewModel)
                     }
                 }
                 .navigationTitle("Order 🧾")
             }
         }
+        .alert("Order Placed!", isPresented: $viewModel.isDisplayingAlert, actions: {
+            Button("Close", role: .cancel) { }
+        }, message: {
+            Text("Order has been sent to the kitchen successfully!")
+        })
         .background(
             Color(uiColor: .secondarySystemBackground)
             .ignoresSafeArea()
@@ -51,7 +56,7 @@ struct OrderView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderView(order: OrderViewModel())
+        OrderView()
     }
 }
 
