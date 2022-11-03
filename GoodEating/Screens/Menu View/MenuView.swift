@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    @ObservedObject private var viewModel = MenuViewModel()
+    @StateObject private var viewModel = MenuViewModel()
     @EnvironmentObject var order: OrderViewModel
 
     var body: some View {
@@ -46,6 +46,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView()
+            .environmentObject(OrderViewModel())
     }
 }
 
@@ -101,7 +102,7 @@ private struct CategorySelectionView: View {
         VStack {
             HStack {
                 Text("Choose Category")
-                    .font(.title2)
+                    .font(.title3)
                     .fontWeight(.medium)
                 Spacer()
             }
