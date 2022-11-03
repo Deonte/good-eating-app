@@ -14,6 +14,7 @@ enum Constants {
         public static let star = "star.circle.fill"
         public static let creditCard = "creditcard"
         public static let user = "person.circle.fill"
+        public static let heart = "heart.fill"
     }
     
     enum ScreenSize {

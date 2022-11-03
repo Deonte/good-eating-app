@@ -74,28 +74,4 @@ final class MenuViewModel: ObservableObject {
         }
     }
     
-    private func downloadDataTo(category: CourseCategory) async  {
-        var menu: [MenuItem]
-        
-        switch category {
-        case .steaks:
-            menu = self.steaks
-        case .bbqs:
-            menu = self.bbq
-        case .drinks:
-            menu = self.drinks
-        case .pizza:
-            menu = self.pizza
-        case .burgers:
-            menu = self.burgers
-        }
-        
-        do {
-            guard menu.isEmpty else { return }
-            try await self.networkManager.downloadMenu(category: category)
-            menu = self.networkManager.menu
-        } catch {
-            self.lastErrorMessage = error.localizedDescription
-        }
-    }
 }

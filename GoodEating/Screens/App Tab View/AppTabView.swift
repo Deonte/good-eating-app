@@ -24,7 +24,7 @@ struct AppTabView: View {
                         .tabItem {
                             Label("Favorites", systemImage: "heart.fill")
                         }
-
+                    
                     OrderView()
                         .tabItem {
                             Label("Checkout", systemImage: "cart")
@@ -67,7 +67,6 @@ struct AppTabView: View {
             viewModel.setTabBarAppearance()
         }
         .task {
-            URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // ~512 MB
             await viewModel.animateSplashScreen()
         }
     }

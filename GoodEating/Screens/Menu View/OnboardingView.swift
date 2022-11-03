@@ -24,10 +24,10 @@ struct OnboardingView: View {
                 )
 
                 FeatureView(
-                    image: Constants.SFSymbol.star,
-                    title: "Influence The Menu",
-                    detail: "The power of your reviews help fellow customers while also giving the kitchen helpful feedback.",
-                    color: .orange
+                    image: Constants.SFSymbol.heart,
+                    title: "Save Favorites",
+                    detail: "Quickly order your most favorite menu items with just a few taps.",
+                    color: .red
                 )
 
                 FeatureView(
