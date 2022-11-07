@@ -27,7 +27,7 @@ struct AppTabView: View {
                     
                     OrderView()
                         .tabItem {
-                            Label("Checkout", systemImage: "cart")
+                            Label("Order", systemImage: "cart")
                         }
                         .badge(order.items.count)
                 }

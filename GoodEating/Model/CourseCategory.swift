@@ -38,7 +38,7 @@ enum CourseCategory: CaseIterable {
         case .drinks:
             return "Drinks"
         case .pizza:
-            return "Desserts"
+            return "Pizza"
         case .burgers:
             return "Burgers"
         }
