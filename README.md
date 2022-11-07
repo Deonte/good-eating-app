@@ -13,4 +13,14 @@
 
 ## Screens
 
-![GoodEating](gitAssets/launch.gif)![GoodEating](gitAssets/Simulator Screen Recording - iPhone 14 Pro - 2022-11-07 at 15.18.58.gif)
+
+
+https://user-images.githubusercontent.com/6656734/200412949-65cad5e8-ba76-4502-af8e-1377b6aa0f0e.mov
+
+
+https://user-images.githubusercontent.com/6656734/200413276-db0a1b90-5bad-4de7-bdc2-4c7fe6223fd0.mov
+
+
+https://user-images.githubusercontent.com/6656734/200412964-6f1f4729-c557-47e5-a006-f0234b46bcd0.mov
+
+
