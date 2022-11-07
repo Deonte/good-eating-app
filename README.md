@@ -11,3 +11,6 @@
 - Upon checkout, total amount will be calculated.
 - Users can add items to their favorites list to order them quickly.
 
+## Screens
+
+![GoodEating](gitAssets/launch.gif)![GoodEating](gitAssets/Simulator Screen Recording - iPhone 14 Pro - 2022-11-07 at 15.18.58.gif)
