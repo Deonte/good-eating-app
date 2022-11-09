@@ -2,7 +2,7 @@
 
 # About the app
 
-## An app aimed for restaurant owners to manage their customers with minimum contact, when customer’s seated at a restaurant table.
+An app aimed for restaurant owners to manage their customers with minimum contact, when customer’s are seated at a restaurant table.
 
 ### Features will include:
 - The app shows a menu as a list.
