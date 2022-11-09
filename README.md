@@ -1,7 +1,5 @@
 # DK's Kitchen
 
-# About the app
-
 An app aimed for restaurant owners to manage their customers with minimum contact, when customer’s are seated at a restaurant table.
 
 Features:
