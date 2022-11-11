@@ -16,6 +16,7 @@ class NetworkManager: ObservableObject {
         case invalidURL
         case failedToDownloadImage
     }
+    
     private let session: URLSession
     private let sessionConfiguration: URLSessionConfiguration
     private let decoder = JSONDecoder()
